@@ -3,14 +3,13 @@
 ### Skjelettanaology for JS, HTML, CSS si rolle i ei nettside
 * HTML er skjelettet
 * JS er musklene
-* CSS er ansiktet og huden
+* CSS er klærne og ansiktet
 ### Trikse og mikse med devtools og browsere
 
-- skru av og på CSS og JS for en hjemmeside, se hva som skjer:
+- skru av og på CSS og JS for en hjemmeside, se hva som skjer.
+Bruk Web Developer
   https://www.vg.no/nyheter/innenriks/i/wPaWkM/sjeldent-syn-her-hopper-ubaatmannskapet-i-vannet - for eksempel
-
 - Å vise en side med betalingsmur og deaktivere den i html
-
 - Vise quiz fusk: [link](https://www.nrk.no/kultur/quiz_-noreg-rundt-med-forfattarar-1.15008193)
 
 Detaljert rekkefølge:
@@ -29,29 +28,16 @@ Avsnitt låst av SVALASTOG Bendik
     * og en rekke med dev-tools, for å kjenne igjen js, html, css osv.?
 5. OPPGAVER:
     * Oppgave 1: De skal lage en side med alle disse tingene I:
-        * \<div>
-        * \<section>
-        * \<article>
-        * \<nav>
-        * \<button>
-        * \<header>
-        * \<footer>
-        * \<aside> osv. 
-        * \<img>
-        * \<a>
-        * \<iframe>
-    * Div og span har ikke styling (Non-semantic vs semantic)
-2. Oppgave 2: De skal fylle i riktig i vår, som vi har laget:
-
-\<div>, Section, Article, Nav, Button, Header, Footer, and Aside osv. 
-\<img>, \<a>, \<iframe>
+        * `<div></div> <section></section> <article></article> <nav></nav> <button></button> <header></header> <footer></footer> <aside></aside> <img></img> <a></a> <iframe></iframe>`
+        * Div og span har ikke styling (Non-semantic vs semantic)
+    * Oppgave 2: De skal fylle i riktig i vår, som vi har laget
 
 Ekstraoppgaver/ting å se på:
-
-Htmlcheatsheet
-
-Git cheat sheet
-
-w33schools
-
-“husk å legge til alle ressursene vi plukker fram I bokmerke-mappe for kurset”
+* Htmlcheatsheet
+* Git cheat sheet
+* w33schools
+* “husk å legge til alle ressursene vi plukker fram I bokmerke-mappe for kurset”
+* Finne eksempel-side på internett og lime inn i prosjektet.
+    * http://www.tjelvar.se/
+    * https://no.wikipedia.org/wiki/JavaScript
+    * w33schools for å finne eksempler også, og stjele
