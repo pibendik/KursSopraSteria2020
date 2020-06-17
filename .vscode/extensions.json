@@ -1,0 +1,6 @@
+{
+    // Put plugins needed here
+    "recommendations": [
+        "ritwickdey.liveserver"
+    ]
+}
