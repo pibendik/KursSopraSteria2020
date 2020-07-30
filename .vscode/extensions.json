@@ -1,6 +1,10 @@
 {
     // Put plugins needed here
     "recommendations": [
-        "ritwickdey.liveserver"
+        "ritwickdey.liveserver",
+        "formulahendry.auto-close-tag",
+        "formulahendry.auto-rename-tag",
+        "coenraads.bracket-pair-colorizer",
+        "vscode-icons-team.vscode-icons"
     ]
 }

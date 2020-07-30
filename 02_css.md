@@ -4,23 +4,24 @@
 
 1. Vise eksempler, hjemmesider med og uten css
     * http://www.tjelvar.se/
+    * https://stripe.com/
     * https://www.vg.no/
     * https://no.wikipedia.org/wiki/JavaScript
     * https://www.creativebloq.com/news/pure-css-art
 
 
 2. Vise eksempler!
-    * ting som kan gjøres både i _inspect_ devtools:
+    * ting som kan gjøres _inspect_ devtools:
         * Background-color
-        * font/style, weight
-        * Scalering: Em/rem vs px/pt %
-        * og så vise eksempelsiden vi lager i dev tools også!
+        * ...og så vise eksempelsiden vi lager i dev tools også!
+
+3. legge til css-dokument til Fudge-siden, eller hvilken vi nå ender opp med å bruke
 
 4. stil på tekst:
-    * tekst
-    * fonter, fallback fonter
-    * spacing
+    * font/style, weight
+    * fonter, fallback fonter (se under)
     * alignment
+    * Skalering: em/rem vs px/pt %
 
 ```css
 .serif {
@@ -38,13 +39,23 @@
 
 
 3. Introdusere CSS - properties
+* Noen av oppgavene kan vi ha js som validerer om de har gitt riktig farge til ting.
+
     * Ulike måter å style på (_inline, separat fil_(source), \<style> (i samme fil) )
-    * CLASS!!!! og ID!!  (vise i vs-code, ``#`` vs ``.``)
+    * Husker dere selector-bruken for å highlighte alle correct-answer="true"?? Vi har flere slike selectorer, main er:
+        * Class: ``.`` (punktum)
+        * Lag en klasse, gjør mange elementer til del av den.
+        * ID: ``#`` (skigard, pound, etc)
+        * Gi noen elementer en unik ID.
     * **background-color** (fint for å vise grensene til objektene du lager)
     * **border** (rounded corners, dotted/dashed, etc...)
     * **margin, padding**
     * **position**: absolute, relative, fixed
     * **font**: med fallback font-valg
+    * Gi en egen styling til alle \<a> (for eksempel).
+    * Gjør teksten til alle \<h> (for eksempel) mye større.
+    * Gjør alle (utfordring: besøkte) lenker turkise.
+    * Gjør alle _first childs_ til \<div>-elementer til blå tekst
 
 4. (Disse viser vi shorthand på under veis)
     * background
@@ -72,11 +83,11 @@
     * ``inline-flex``
 
 
-7. Flexbox og css grid
-    * https://flexboxfroggy.com/
-    * https://cssgridgarden.com/
-    * https://www.youtube.com/watch?v=uuOXPWCh-6o (evt. som ekstra oppg.)
-
+7. Selectors, Flexbox og css grid
+    * http://flukeout.github.io/ (selectors)
+    * https://flexboxfroggy.com/ (flex-box)
+    * https://cssgridgarden.com/ (css-grid)
+    * https://www.youtube.com/watch?v=uuOXPWCh-6o (CSS-grid)
 
 8. Tilpasse skjerm
     * @media
