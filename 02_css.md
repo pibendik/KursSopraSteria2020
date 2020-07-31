@@ -5,10 +5,7 @@
 1. Vise eksempler, hjemmesider med og uten css
     * http://www.tjelvar.se/
     * https://stripe.com/
-    * https://www.vg.no/
-    * https://no.wikipedia.org/wiki/JavaScript
     * https://www.creativebloq.com/news/pure-css-art
-
 
 2. Vise eksempler!
     * ting som kan gjøres _inspect_ devtools:

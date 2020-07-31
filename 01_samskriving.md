@@ -15,24 +15,59 @@ Dette er en god plass å fortelle at front-end og back-end har et tydelig skille
 
 Detaljert rekkefølge:
 
-1. Det fins en sert
+1. Det fins en sertifisering:
+    * https://docs.microsoft.com/en-us/learn/certifications/exams/70-480
 2. Vise Chrome Firefox devtools
     * Vise hvordan det ser ut når man skrur av javascript
     * Vise hvordan det ser ut når man skrur av css
     * Vise at man kan tukle og “hacke” vg (evt. Slette en artikkel/nyhet)
 3. Git (Basic)
+    * https://git-scm.com/downloads
     * Alle forker og kloner prosjektet, så de kan pushe til sine egne prosjekter 
     * https://gitexplorer.com/
+    * https://github.com/pibendik/KursSopraSteria2020
 4. Oppsett VSCode
+    * https://code.visualstudio.com/Download
     * Vi får en test-kanin til å skrive extensions.json-fila live forran tavla, pushe til master, og så får alle andre pulle og åpne prosjektet i vs-code og installere extensionene automatisk.
     * De skal vel alle sammen ha live server (ligger i .vscode/extensions)
     * vise extensions.json - hvilke extensions trengs.
     * og en rekke med extensions, lintere osv., for å kjenne igjen js, html, css, som emmet osv.?
 5. OPPGAVER:
     * Oppgave 1: De skal lage en side med alle disse tingene I:
-        * `<div></div> <section></section> <article></article> <nav></nav> <button></button> <header></header> <footer></footer> <aside></aside> <img></img> <a></a> <iframe></iframe>`
-        * Div og span har ikke styling (Non-semantic, som \<b> og \<i>, vs semantic, som \<span> og \<div>)
-    * Oppgave 2: De skal fylle i riktig i vår, som vi har laget. Vi kan avslutte dagen ved å vise hvordan de un-doer alle endringene vi gjorde, ved å se på git-historikken.
+
+
+        ### Eksempel på rekkefølge:
+        * `<h1> </h1>` - lag en overskrift
+        * `<h3></h3>` - lag en overskrift for en artikkel
+        * `<article> </article>` - fyll inn innhold inne i artikkelen
+        * `<section> </section>` - del inn artikkelen i seksjoner
+        * `<aside> </aside>` - noe som ikke henger tematisk sammen med innholdet i resten av artikkelen
+        * `<b> </b> <strong></strong> <i></i>` - slik kan du fremheve tekst
+        * `<button> </button>` - lag en knapp, og putt tekst i knappen!
+
+        * `<header> </header>` - Det går an å ha en separat del helt øverst på siden, og da putter man den i en header-tag.
+        * `<footer> </footer>` - Fyll inn navn på forfatter, lenker til sosiale media osv., som typisk er å finne nederst på en side
+        
+        * `<img src="_____"> </img>` - legg ved et bilde, se https://www.w3schools.com/TAGs/tag_img.asp
+        * `<a> </a>` - gjør noe tekst om til en lenke ("anchor") til et annet sted
+        * `<iframe> </iframe>` - "embed," eller "bygg inn" en youtube-video eller en spotify-spiller, eller en hel annen nettside!
+        * `<nav> </nav>` - ekstra oppgave! Navigering på siden gjøres med "nav"-tagger.
+
+        ### andre tagger det er godt å vite om:
+        * `<head> </head>` - definerer kompliserte ting for nørder (container for metadata)
+        * `<body> </body>` - inneholder hele "skjelettet" til siden
+        * `<div> </div>` - ALLTID BARE BRUK DENNE
+        * `<span> </span>` - litt som \<div>, men typisk for bokstaver og ikke større greier, typisk midt i en setning.
+            * Div og span har ikke styling (de er non-semantic, som \<b> og \<i>, vs semantic, som \<span> og \<div>)
+
+        * https://www.w3schools.com/TAGs/ - info om alle taggene!
+        * https://lipsum.com/ - her finner dere brødtekst til å fylle på hjemmesidene deres
+
+        ### pause
+       
+    * Oppgave 2: De skal fylle i riktig i vår, som vi har laget.
+    Vi kan vise bilde av hvordan vi vil at resultatet skal bli.
+    Vi kan avslutte dagen ved å vise hvordan de un-doer alle endringene vi gjorde, ved å se på git-historikken.
 
 Ekstraoppgaver/ting å se på:
 * Htmlcheatsheet

@@ -1,0 +1,27 @@
+html {
+    /** Legg inn finere fonter! */
+}
+
+p {
+    /** legg til en farge som "background" property her */
+}
+
+.foo {
+    /** "class":
+    dette identifiserer en type ting */
+}
+
+.foo p {
+    /** alle paragrafer som er inne i et element i klassen "foo", får følgende egenskaper */
+}
+
+.foo>p {
+    /** alle paragrafer som er direkte barn av et element av typen "foo" */
+}
+
+
+#bar {
+    /** "id":
+    dette identifiserer et unikt element */
+}
+
