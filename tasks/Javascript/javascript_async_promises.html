@@ -35,22 +35,23 @@
     }
     // end setup
 
-    // Oppgaver under:
+    // Oppgaver:
     const link = 'https://api.chucknorris.io/jokes/random';
 
     (function usePromise() {
-        function getJoke() {
-            /* Hent en tilfeldig vits ved å bruke fetch */
+        function goGetMeAJoke() {
+            /* Oppgave: Hent en tilfeldig vits ved å bruke fetch(lenke), then og response.json.
+            ** skriv kode her. */
             return fetch(link)
                 .then(response => response.json())
         }
 
-        getJoke().then(validateAndAddJoke)
+        goGetMeAJoke().then(validateAndAddJoke) /** Her sjekker vi om vitsen var noe bra ;) */
     })();
 
     // https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous/Async_await
     (async function useAsync() {
-        async function getJoke() {
+        async function goGetMeAJoke() {
             let joke;
             /* Bruk async await for å hente en vits */
             const response = await fetch(link)
@@ -59,7 +60,7 @@
             return joke;
         }
 
-        validateAndAddJoke(await getJoke())
+        validateAndAddJoke(await goGetMeAJoke())
     })();
 
 

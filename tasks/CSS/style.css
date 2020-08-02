@@ -2,54 +2,62 @@
 ** Her øverst står det ulike tagger som du skal putte inn egendefinerte css-regler i.
 */
 html {
-    /** Legg inn finere fonter! */
-    margin: 5% 20%;
+    /** Legg inn finere fonter!
+    *   enkel oppgave: https://www.w3schools.com/cssref/css_websafe_fonts.asp
+    *   utfordring: bruk en fancy font som ikke følger med i nettleseren
+    */
+
+    /** legg også til "margin"-properties og legg til marginer
+    */
 }
 
 p {
-    /** legg til en farge som "background" property her og se hva som skjer */
+    /** legg for eksempel til en farge med "background-color: ;" propertyen her og se hva som skjer */
 }
 
 img {
     /** sett for eksempel "width" til 260px og "height" til 200px */
-    width: 260px;
-    height: 200px;
 }
 
 figure {
-    /** Denne vil vi skal flyte til venstre*/
-    float: left;
-    margin: 1rem 3rem 1rem 1rem;
+    /** Denne vil vi skal flyte til venstre
+    *   Og vi vil gi figuren marginer, slik at det er luftig og behagelig å se på
+    */
 }
 
 figure figcaption {
-    max-width: 260px;
+    /**
+    *   Sørg for at teksten under bildet i figuren ikke er bredere enn bildet!
+    */
 }
 
 blockquote:before {
-    color: #ccc;
+    /**
+    *   "content: open-quote" legger til en "-figur. Gjør den kul med 
+    *    color, font-size, line-height, margin-right og vertical-align
+    */
     content: open-quote;
-    font-size: 4em;
-    line-height: 0.1em;
-    margin-right: 0.25em;
-    vertical-align: -0.4em;
 }
 
 blockquote {
-    padding-left: 0.5rem;
-    padding-top: 1rem;
+    /** Legg til padding slik at teksten får litt luft over seg*/
 }
 
 blockquote author {
-    font-size: 0.6rem;
-    display: block;
-    margin-left: 3rem;
+    /** endre på display-propertyen slik at forfatter ikke vises på samme linje.
+    *   gjør også teksten mindre her
+    */
 }
 
 header author {
-    font-size: 0.9rem;
+    /** Her kan teksten også godt gjøres litt mindre */
 }
 
+video {
+    /**
+    *   sett bredde og høyde
+    */
+}
 /**
 *   Her følgre egen-definerte "klasser"
 *   Klasser defineres med et punktum (.) forran ordet i css-fila.

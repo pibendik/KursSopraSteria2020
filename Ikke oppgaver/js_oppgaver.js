@@ -14,3 +14,6 @@
 function f() {
     document.getElementById("bendiks");
 }
+
+// fins fine oppgaver her:
+// https://www.w3schools.com/js/js_examples.asp (javascript)
