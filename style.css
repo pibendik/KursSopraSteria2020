@@ -1,27 +1,84 @@
+/**
+** Her øverst står det ulike tagger som du skal putte inn egendefinerte css-regler i.
+*/
 html {
     /** Legg inn finere fonter! */
+    margin: 5% 20%;
 }
 
 p {
-    /** legg til en farge som "background" property her */
+    /** legg til en farge som "background" property her og se hva som skjer */
 }
 
-.foo {
-    /** "class":
-    dette identifiserer en type ting */
+img {
+    /** sett for eksempel "width" til 260px og "height" til 200px */
+    width: 260px;
+    height: 200px;
 }
 
-.foo p {
-    /** alle paragrafer som er inne i et element i klassen "foo", får følgende egenskaper */
+figure {
+    /** Denne vil vi skal flyte til venstre*/
+    float: left;
+    margin: 1rem 3rem 1rem 1rem;
 }
 
-.foo>p {
-    /** alle paragrafer som er direkte barn av et element av typen "foo" */
+figure figcaption {
+    max-width: 260px;
 }
 
-
-#bar {
-    /** "id":
-    dette identifiserer et unikt element */
+blockquote:before {
+    color: #ccc;
+    content: open-quote;
+    font-size: 4em;
+    line-height: 0.1em;
+    margin-right: 0.25em;
+    vertical-align: -0.4em;
 }
 
+blockquote {
+    padding-left: 0.5rem;
+    padding-top: 1rem;
+}
+
+blockquote author {
+    font-size: 0.6rem;
+    display: block;
+    margin-left: 3rem;
+}
+
+header author {
+    font-size: 0.9rem;
+}
+
+/**
+*   Her følgre egen-definerte "klasser"
+*   Klasser defineres med et punktum (.) forran ordet i css-fila.
+*   En klasse skal referere til alle objekter av samme klasse på hele siden.
+*/
+.fargetekst {
+    /** velg en farge til teksten i alle <span>-elementer som er av denne typen*/
+}
+
+.span-er-kult {
+    /** velg noe styling til teksten i alle <span>-elementer som er av denne typen*/
+}
+
+ul a {
+    /** alle lenker (anchor, eller "a") som er inne i en un-ordered list (ul), får følgende egenskaper */
+}
+
+ul>a {
+    /**
+    **  alle lenker som er direkte barn av et element av typen "ul" vil få følgende egenskaper
+    **  Eller, det ville de ha fått om det var noen! Tilfeldigvis er alle lenkene i de listene vi
+    **  har i sin tur inni liste-elementer (li)
+    */
+}
+
+/**
+*   ID defineres med skigard eller "hashtag" (#) i css-fila.
+*   En ID skal kun referere til et unikt objekt på siden
+*/
+#typografi {
+    /** velg styling til teksten det ene <span>-elementet som har id-en "typografi" */
+}

@@ -38,20 +38,20 @@ Detaljert rekkefølge:
 
         ### Eksempel på rekkefølge:
         * `<h1> </h1>` - lag en overskrift
-        * `<h3></h3>` - lag en overskrift for en artikkel
+        * `<h3> </h3>` - lag en overskrift for en artikkel
         * `<article> </article>` - fyll inn innhold inne i artikkelen
         * `<section> </section>` - del inn artikkelen i seksjoner
         * `<aside> </aside>` - noe som ikke henger tematisk sammen med innholdet i resten av artikkelen
-        * `<b> </b> <strong></strong> <i></i>` - slik kan du fremheve tekst
+        * `<b> </b> <strong> </strong> <i> </i>` - slik kan du fremheve tekst
         * `<button> </button>` - lag en knapp, og putt tekst i knappen!
 
         * `<header> </header>` - Det går an å ha en separat del helt øverst på siden, og da putter man den i en header-tag.
         * `<footer> </footer>` - Fyll inn navn på forfatter, lenker til sosiale media osv., som typisk er å finne nederst på en side
         
-        * `<img src="_____"> </img>` - legg ved et bilde, se https://www.w3schools.com/TAGs/tag_img.asp
-        * `<a> </a>` - gjør noe tekst om til en lenke ("anchor") til et annet sted
-        * `<iframe> </iframe>` - "embed," eller "bygg inn" en youtube-video eller en spotify-spiller, eller en hel annen nettside!
-        * `<nav> </nav>` - ekstra oppgave! Navigering på siden gjøres med "nav"-tagger.
+        * `<img src="_____">` - legg ved et bilde, se https://www.w3schools.com/TAGs/tag_img.asp
+        * `<a> </a>` - gjør noe om til en lenke ("anchor")
+        * `<iframe>` - "embed," eller "bygg inn" en youtube-video eller en spotify-spiller, eller en hel annen nettside!
+        * `<nav>` - ekstra oppgave! Navigering på siden gjøres med "nav"-tagger.
 
         ### andre tagger det er godt å vite om:
         * `<head> </head>` - definerer kompliserte ting for nørder (container for metadata)

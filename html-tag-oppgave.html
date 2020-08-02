@@ -10,11 +10,13 @@
 
 
 <body cz-shortcut-listen="true">
-    <h1>Dette er den <i>skeiveste</i> overskriften!</h1>
-    <p>Dette er en paragraf.</p>
+    <header>
+        <h1>Dette er den <i>skeiveste</i> overskriften!</h1>
+        <author>Noen har forfattet denne headeren...</author>
+    </header>
     <h2>Her har vi en litt mindre overskrift.</h2>
     <p> Span-tagger er litt annerledes fra andre tagger. Når du lager en lang tekst,
-        så vil du kanskje at noe av teksten <span style="color: #cafebabe">er inne i en span</span>
+        så vil du kanskje at noe av teksten <span class="fargetekst">er inne i en span</span>
         slik at du kan gi den den avgrensede teksten egenskaper, som farge eller unik ID
         (mer om det senere i kurset)</p>
     <p><span class="span-er-kult">Span er kult!</span> men klasser skal vi først lære oss om i morgen.</p>
@@ -51,7 +53,7 @@
             <figure>
                 <img src="./baby-elefant.jpg" title="En babyelefant"
                     alt="alt-attributten skal beskrive bilder slik at skjerm-lesere kan fortelle til f.eks. blinde hva som står på bildet.">
-                <figcaption>En rimelig størrelse på dette img-elementet ville vært 200px * 170px</figcaption>
+                <figcaption>En rimelig størrelse på dette img-elementet ville vært 180px * 180px</figcaption>
             </figure>
         </div>
         <div class="tekst-venstre">
@@ -63,13 +65,17 @@
                 oppgaver.</p>
         </div>
     </div>
-    <h2>SVG er ekstra pent</h2>
     <p>Det er ikke alltid like intuitivt å jobbe med SVG, men det er verdt det når man får det til!
         Se for eksempel hvor lett <a href="https://zoyaspantry.com.au/">zoyaspantry.com</a> laster inn. Små sider laster
         fortere fortere.
     </p>
+    <aside>
+        Når man putter inn noe som ikke henger sammen med det rundt, kan man ha det i en "aside" slik som her.
+        Disse setningene handler verken om SVG eller andre bilder, så derfor gir det mening her.
+    </aside>
     <blockquote>
         Det finnes noe som heter "blockquote" også, som du kan teste ut på dette lille avsnittet.
+        <author>En eller annen "author" har sikkert sagt det!</author>
     </blockquote>
     <h2>Avslutning</h2>
     <p>Denne hjemmesiden er inspirert av <a href="http://motherfuckingwebsite.com/"><span
