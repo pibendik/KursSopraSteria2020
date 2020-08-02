@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    "use strict";
+    let solved = 0;
+    const total = 1;
+
+    (function () {
+        // Fix code
+        const x = 2
+        x = 1;
+    })();
+
+    (function UseLetOrConst() {
+    // Use let (or const) instead of var to make the function succeed.
+    var x = 1;
+    if (true) {
+      var x = 2;
+    }
+
+    // Don't make changes below this line
+    if(x === 1){
+      solved++
+    } else{
+      console.error("UseLetOrConst: Uh oh!")
+    }
+  })();
+
+    // Primitives
+
+    (function () {
+        // Fix code
+        const number = 2;
+        const bigNumber = Number.MAX_SAFE_INTEGER;
+        const hugeNumber =  BigInt(Number.MAX_SAFE_INTEGER + 1)
+
+        const boolean = 3;
+        const string = "Hello world"
+        const iAmUndefined = undefined
+        let iAmUndefined2;
+    })();
+
+    // 
+
+    (function () {
+        // Use if else to Validate if the person is old enough to drink 
+        function isOldEnough(age){
+            // Code here
+        }
+
+        if(isOldEnough(18) && !isOldEnough(17) && isOldEnough(20)){
+            solved++;
+        }
+    })();    
+
+    // Operators  
+    (function () {
+        // Use if else to Validate if the person is old enough to drink 
+        function isOldEnough(person){
+            // Code here
+        }
+        let float = "asdas";
+        let undefined = "asdasd";
+        console.log(undefined)
+
+        const john = { name: "John", age: 18 }
+        const todd = { age: 17 }
+        if(isOldEnough(18) && !isOldEnough(17)){
+            solved++;
+        }
+    })();
+    
+    (function () {
+        // Use switch statement to Validate if the person is old enough to drink  
+        function isOldEnough(age){
+            // Code here
+        }
+
+        if(isOldEnough(18) && !isOldEnough(17) && isOldEnough(20)){
+            solved++;
+        }
+    })();
+
+    (function () {
+        const numbers = [1, 2, 3, 4, 5, 6];
+        let output = [];
+        // add all even numbers to the  output array using continue
+        for (let index = 0; index < numbers.length; index++) {
+            let element = numbers[index]
+            if(element % 2 !== 0){
+                continue;
+            }
+            output.push(element)
+        }
+
+        if(JSON.stringify(output) === JSON.stringify([2, 4, 6])){
+            solved++;
+        }
+    })();
+    
+  console.log("Solved tests: " + solved + " of total: " + total)
+</script>
+
+</html>
