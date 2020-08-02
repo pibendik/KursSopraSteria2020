@@ -90,3 +90,10 @@ ul>a {
 #typografi {
     /** velg styling til teksten det ene <span>-elementet som har id-en "typografi" */
 }
+
+img {
+    /**
+    * Sett display til noe som ikke er usynlig
+    */
+    display: none;
+}

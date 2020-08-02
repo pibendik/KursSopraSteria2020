@@ -13,16 +13,17 @@ p {
     /** legg til en farge som "background" property her og se hva som skjer */
 }
 
-img {
-    /** sett for eksempel "width" til 260px og "height" til 200px */
-    width: 260px;
-    height: 200px;
-}
 
 figure {
     /** Denne vil vi skal flyte til venstre*/
     float: left;
     margin: 1rem 3rem 1rem 1rem;
+}
+
+figure img {
+    /** sett for eksempel "width" til 260px og "height" til 200px */
+    width: 260px;
+    height: 200px;
 }
 
 figure figcaption {
@@ -54,10 +55,10 @@ header author {
 }
 
 video {
-    /**
-    *   sett bredde og høyde
-    */
+    width: 300;
+    height: 260;
 }
+
 /**
 *   Her følgre egen-definerte "klasser"
 *   Klasser defineres med et punktum (.) forran ordet i css-fila.

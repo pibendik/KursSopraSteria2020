@@ -18,7 +18,7 @@
     * font/style, weight
     * fonter, fallback fonter (se under)
     * alignment
-    * Skalering: em/rem vs px/pt %
+    * Skalering: em/rem vs px/pt/%
 
 ```css
 .serif {
