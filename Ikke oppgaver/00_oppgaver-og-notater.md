@@ -1,5 +1,6 @@
 00_oppgaver-og-notater
 
+Legg til bilde av løsning/svar
 Javascript oppgaver:
 
 * https://www.w3schools.com/js/js_examples.asp (javascript)
