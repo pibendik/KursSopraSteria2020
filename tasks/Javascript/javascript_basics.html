@@ -11,104 +11,156 @@
 
 </body>
 <script>
+    // Setup
     "use strict";
-    let solved = 0;
-    const total = 1;
 
-    (function () {
-        // Fix code
-        const x = 2
-        x = 1;
-    })();
-
-    (function UseLetOrConst() {
-    // Use let (or const) instead of var to make the function succeed.
-    var x = 1;
-    if (true) {
-      var x = 2;
+    let unsolvedTasks = []
+    let solvedTasks = []
+    function checkAnswer(condition, taskName) {
+        if (condition) {
+            solvedTasks.push(`😃 Oppgave ${taskName}`)
+        } else {
+            unsolvedTasks.push(`🤔 Oppgave ${taskName}`)
+        }
     }
 
-    // Don't make changes below this line
-    if(x === 1){
-      solved++
-    } else{
-      console.error("UseLetOrConst: Uh oh!")
+    function printResults() {
+        console.groupCollapsed(`%c ✔ ${solvedTasks.length} av ${tasks.length} oppgaver løst`, 'background: #15574F; color: white;')
+        solvedTasks.forEach(taskString => {
+            console.log(taskString)
+        })
+        console.groupEnd();
+        console.group(`${unsolvedTasks.length} uløste oppgaver`)
+        unsolvedTasks.forEach(taskString => {
+            console.log(`%c ${taskString}`, 'background: #ffff66; color: black; font-size: 16px;')
+        })
+        console.groupEnd();
+        console.log(`${solvedTasks.length} av ${tasks.length} oppgaver løst`)
     }
-  })();
 
-    // Primitives
+    // end setup
 
-    (function () {
-        // Fix code
-        const number = 2;
-        const bigNumber = Number.MAX_SAFE_INTEGER;
-        const hugeNumber =  BigInt(Number.MAX_SAFE_INTEGER + 1)
-
-        const boolean = 3;
-        const string = "Hello world"
-        const iAmUndefined = undefined
-        let iAmUndefined2;
-    })();
-
-    // 
-
-    (function () {
-        // Use if else to Validate if the person is old enough to drink 
-        function isOldEnough(age){
-            // Code here
-        }
-
-        if(isOldEnough(18) && !isOldEnough(17) && isOldEnough(20)){
-            solved++;
-        }
-    })();    
-
-    // Operators  
-    (function () {
-        // Use if else to Validate if the person is old enough to drink 
-        function isOldEnough(person){
-            // Code here
-        }
-        let float = "asdas";
-        let undefined = "asdasd";
-        console.log(undefined)
-
-        const john = { name: "John", age: 18 }
-        const todd = { age: 17 }
-        if(isOldEnough(18) && !isOldEnough(17)){
-            solved++;
-        }
-    })();
-    
-    (function () {
-        // Use switch statement to Validate if the person is old enough to drink  
-        function isOldEnough(age){
-            // Code here
-        }
-
-        if(isOldEnough(18) && !isOldEnough(17) && isOldEnough(20)){
-            solved++;
-        }
-    })();
-
-    (function () {
-        const numbers = [1, 2, 3, 4, 5, 6];
-        let output = [];
-        // add all even numbers to the  output array using continue
-        for (let index = 0; index < numbers.length; index++) {
-            let element = numbers[index]
-            if(element % 2 !== 0){
-                continue;
+    const tasks = [
+        function () {
+            // // Fiks koden
+            // const x = 2;
+            // x = 1
+        },
+        function UseLetOrConst() {
+            // Bruk let (eller const) istedet for var.
+            var x = 1;
+            if (true) {
+                var x = 2;
             }
-            output.push(element)
-        }
 
-        if(JSON.stringify(output) === JSON.stringify([2, 4, 6])){
-            solved++;
+            checkAnswer(x===1, UseLetOrConst)
+        },
+
+
+        // Primitives ?
+
+        // Operators  
+        function OperatorsIf() {
+            // Bruk if else for å validere om personen er gammel nok til å ta lappen
+            function isOldEnough(person) {
+                // Kode her
+            }
+
+            const john = { name: "John", age: 18 }
+            const todd = { age: 17 }
+            checkAnswer(isOldEnough(john) && !isOldEnough(todd), "OperatosIf")
+        },
+
+        function OperatorsSwitch() {
+            // Bruk switch for å validere om personen er gammel nok til å ta lappen
+            function isOldEnough(age) {
+                // Kode her
+            }
+
+            const john = { name: "John", age: 18 }
+            const todd = { age: 17 }
+            checkAnswer(isOldEnough(john) && !isOldEnough(todd), "OperatorsSwitch")
+        },
+
+        function useForLoopI() {
+            const numbers = [1, 2, 3, 4, 5, 6];
+            let output = [];
+            // Bruk en for-løkke for å legge til alle heltall fra numbers i output
+
+            checkAnswer(JSON.stringify(output) === JSON.stringify([2, 4, 6]), "UseForLoopI")
+        },
+
+
+        function useForLoopIBreak() {
+            const numbers = [1, 2, 3, 4, 5, 6]
+            let output = [];
+            // Bruke break keyword'et til å legge de første 3 elementene i nubmers i output
+
+            for (let index = 0; index < numbers.length; index++) {
+                const element = numbers[index];
+                output.push(element);
+            }
+
+            checkAnswer(JSON.stringify(output) === JSON.stringify([1, 2, 3]), "useForLoopIBreak")
+        },
+
+        function useFoorLoopIContinue() {
+            const numbers = [1, 2, 3, 4, 5, 6];
+            let output = [];
+            // add all even numbers to the  output array using continue
+            for (let index = 0; index < numbers.length; index++) {
+                let element = numbers[index]
+                if (element % 2 !== 0) {
+                    continue;
+                }
+                output.push(element)
+            }
+
+            checkAnswer(JSON.stringify(output) === JSON.stringify([2, 4, 6]), "useForLoopIContinue")
+        },
+        
+        function useForOfLoop() {
+            function reversify(stringToReverse) {
+                let output = "";
+
+                // for... of løkke for å reversere stringToReserve input parameteren
+                for (const char of stringToReverse) {
+                    output = char + output
+                }
+
+                return output;
+            }
+
+            checkAnswer(reversify("qwerty") === "ytrewq", "useForOfLoop")
+        },
+
+        function useForInLoop() {
+            function getAllNames(tlfKatalog) {
+                let names = []
+
+                // Hent alle navn i telefonkatalogen ved å bruke en for...in -løkke
+                for (const key in tlfKatalog) {
+                    names.push(key)
+                }
+
+                return names;
+            }
+
+            const testTlfKatalog = {
+                "John": 12312,
+                "Marley": 420,
+                "Gabe": 1337,
+            }
+            const extractedNames = getAllNames(testTlfKatalog).push('asdf')
+            checkAnswer(JSON.stringify(Object.keys(testTlfKatalog)) === JSON.stringify(extractedNames), "useForInLoop")
         }
-    })();
-    
-  console.log("Solved tests: " + solved + " of total: " + total)
+    ]
+
+
+    // Kjør oppgaver og vis score
+    tasks.forEach(task => task())
+    printResults();
+
 </script>
 
 </html>
