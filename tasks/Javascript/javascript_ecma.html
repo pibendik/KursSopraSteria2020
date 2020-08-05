@@ -1,69 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
 </head>
+
 <body>
-    
+
 </body>
 <script>
-    let solved = 0;
-    let total = 3;
+  let solved = 0;
+  let total = 3;
 
-    (function useDescructuringArray() {
-        const array = [...Array(20).keys()];
-        const  [first, second, ...rest] = array;
-        // Put the first and second element last
-        const newArray = [...rest, first, second]
-        
-        // NO TOUCHY!
-        if(newArray[newArray.length -2] === 0 && newArray[newArray.length -1] === 1){
-          solved++;
-        }
-    })();
-    
-    (function useDesctructuringObject1() {
-        const person = { firstName: "John", lastName: "Doe", age: "18" }
+  (function useDescructuringArray() {
+    const array = [...Array(20).keys()];
+    const [first, second, ...rest] = array;
+    // Put the first and second element last
+    const newArray = [...rest, first, second]
 
-        let firstName;
-        let lastName;
-        // Bruk desctructuring til å hente firstName og lastName
-        ({ firstName, lastName } = person);
+    // NO TOUCHY!
+    if (newArray[newArray.length - 2] === 0 && newArray[newArray.length - 1] === 1) {
+      solved++;
+    }
+  })();
 
-        // NO TOUCHY!
-        if(firstName === "John" && lastName === "Doe"){
-          solved++;
-        }
-    })();
-    
-    // Kommenter ut teksten under med ctrl + k -> c / ctrl + k -> u
-    // (function useDesctructuringObject2() {
-    //     const person = { firstName: "John", lastName: "Doe", age: "18" }
+  (function useDesctructuringObject1() {
+    const person = { firstName: "John", lastName: "Doe", age: "18" }
 
-    //     // Bruk desctructuring til å hente firstName og lastName
-        
+    let firstName;
+    let lastName;
+    // Bruk desctructuring til å hente firstName og lastName
+    ({ firstName, lastName } = person);
 
-    //     // NO TOUCHY!
-    //     if(firstName === "John" && lastName === "Doe"){
-    //       solved++;
-    //     }
-    // })();
-    
-    (function useRestParams() {
-        const array = [...Array(20).keys()];
-        const  [first, second, ...rest] = array;
-        // Put the first and second element last
-        const newArray = [...rest, first, second]
-        
-        // NO TOUCHY!
-        if(newArray[newArray.length -2] === 0 && newArray[newArray.length -1] === 1){
-          solved++;
-        }
-    })();
+    // NO TOUCHY!
+    if (firstName === "John" && lastName === "Doe") {
+      solved++;
+    }
+  })();
 
-    
-    console.log("Solved tests: " + solved + " of total: " + total)
+  // Kommenter ut teksten under med ctrl + k -> c / ctrl + k -> u
+  // (function useDesctructuringObject2() {
+  //     const person = { firstName: "John", lastName: "Doe", age: "18" }
+
+  //     // Bruk desctructuring til å hente firstName og lastName
+
+
+  //     // NO TOUCHY!
+  //     if(firstName === "John" && lastName === "Doe"){
+  //       solved++;
+  //     }
+  // })();
+
+  (function nestedDestructuring() {
+    const persons = {
+      admin: { name: "John Doe", age: "18" },
+      notAdmin: { name: "Fritjof", age: "???" }
+    }
+
+
+    // Bruk nested desctructuring til å hente admin sin "name" property
+    let { name } = person;
+
+    // NO TOUCHY!
+    if (name === "John Doe") {
+      solved++;
+    }
+  })();
+
+  (function useRestParams() {
+    const array = [...Array(20).keys()];
+    const [first, second, ...rest] = array;
+    // Put the first and second element last
+    const newArray = [...rest, first, second]
+
+    // NO TOUCHY!
+    if (newArray[newArray.length - 2] === 0 && newArray[newArray.length - 1] === 1) {
+      solved++;
+    }
+  })();
+
+
+  console.log("Solved tests: " + solved + " of total: " + total)
 </script>
+
 </html>
