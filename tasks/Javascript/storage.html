@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+
+    // Setup
+    "use strict";
+
+    let unsolvedTasks = []
+    let solvedTasks = []
+    function checkAnswer(condition, taskName) {
+        if (condition) {
+            solvedTasks.push(`😃 Oppgave ${taskName}`)
+        } else {
+            unsolvedTasks.push(`🤔 Oppgave ${taskName}`)
+        }
+    }
+
+    function printResults() {
+        console.groupCollapsed(`%c ✔ ${solvedTasks.length} av ${tasks.length} oppgaver løst`, 'background: #15574F; color: white;')
+        solvedTasks.forEach(taskString => {
+            console.log(taskString)
+        })
+        console.groupEnd();
+        console.group(`${unsolvedTasks.length} uløste oppgaver`)
+        unsolvedTasks.forEach(taskString => {
+            console.log(`%c ${taskString}`, 'background: #ffff66; color: black; font-size: 16px;')
+        })
+        console.groupEnd();
+        console.log(`${solvedTasks.length} av ${tasks.length} oppgaver løst`)
+    }
+
+    // end setup
+
+    const tasks = [
+
+        function useLocalStorage() {
+            function save(key, value) {
+                // Lagre en "value" i localstorage
+                /* Kode her */
+            }
+
+            function load(key) {
+                // last en "value" med gitt "key" fra localstorage
+                /* Kode her */
+            }
+
+            // Test kode under
+            const settings = {
+                lang: 'en',
+                cookiesEnabled: true
+            }
+
+            save('settings', settings)
+            const loadedSettings = load(settings)
+
+            checkAnswer(!!loadedSettings && loadedSettings.lang === settings.lang && loadedSettings.cookiesEnabled === settings.cookiesEnabled, "useLocalStorage")
+        },
+
+        // Samme oppgave med session storage
+        function useSessionStorage() {
+            function save(key, value) {
+                // Lagre en "value" i localstorage
+                /* Kode her */
+            }
+
+            function load(key) {
+                // last en "value" med gitt "key" fra localstorage
+                /* Kode her */
+            }
+
+            // Test kode under
+            const settings = {
+                lang: 'en',
+                cookiesEnabled: true
+            }
+
+            save('settings', settings)
+            const loadedSettings = load(settings)
+
+            checkAnswer(!!loadedSettings && loadedSettings.lang === settings.lang && loadedSettings.cookiesEnabled === settings.cookiesEnabled, "useSessionStorage")
+        }
+    ];
+
+    tasks.forEach(task => task());
+    printResults();
+
+</script>
+
+</html>
