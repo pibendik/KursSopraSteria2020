@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="addImageToMe">
+        <div>
+            Legg til et bilde her
+        </div>
+    </div>
+    <div id="removeElementFromDiv">
+        <div>
+            Fjern teksten til høyre
+        </div>
+        <div>
+            Fjern meg
+        </div>
+    </div>
+    <div id="weedy-garden">
+        <h1>Le Garden: </h1>
+        <style>
+            #weedy-garden {
+                display: flex;
+                flex-direction: row;
+                border: solid 2px brown;
+            }
+
+            .weed {
+                background-color: chartreuse;
+                margin: 2px;
+                display: flex;
+                margin: auto;
+            }
+
+            .flower {
+                background-color: yellow;
+                margin: 2px;
+                display: flex;
+                margin: auto;
+            }
+        </style>
+        <div class="weed">
+            Ugress
+        </div>
+        <div class="flower">
+            Blomst
+        </div>
+        <div class="weed">
+            Ugress
+        </div>
+        <div class="flower">
+            Blomst
+        </div>
+        <div class="weed">
+            Ugress
+        </div>
+    </div>
+    <h2> Kø (Fjern det først elementet med klasse "cool"):</h2>
+    <div id="queue-container">
+        <style>
+            #queue-container {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-around;
+            }
+        </style>
+        <div>1</div>
+        <div class="cool">2</div>
+        <div class="cool">3</div>
+        <div calss="cool">4</div>
+    </div>
+
+    <h2>Fjern alle divs</h2>
+    <div id="remove-all-divs">
+        <style>
+            #remove-all-divs {
+                border: solid 2px brown;
+                display: flex;
+                justify-content: space-around;
+            }
+        </style>
+        <div><b>Fjern meg!</b></div>
+        <span>Spar meg!!</span>
+        <div><b>Fjern meg!</b></div>
+        <span>Spar meg!!</span>
+        <div><b>Fjern meg!</b></div>
+        <span>Spar meg!!</span>
+        <div><b>Fjern meg!</b></div>
+    </div>
+</body>
+<script>
+    let solved = 0;
+    let total = 2;
+
+    const tasks = [
+        function addElementToDiv() {
+
+            const parentDiv = document.getElementById("addImageToMe");
+
+            // Lag et nytt img element
+            const addMe = document.createElement("img")
+            addMe.src = "https://i.kym-cdn.com/entries/icons/original/000/029/079/hellothere.jpg"
+
+            // Legg element til i parentDiv 
+            parentDiv.appendChild(addMe)
+            if (parentDiv.children.length > 1) {
+                solved++;
+            } else {
+                console.error(":C")
+            }
+
+        },
+
+        function removeElementFromDiv() {
+
+            const divToRemoveFrom = document.getElementById("removeElementFromDiv");
+
+            divToRemoveFrom.removeChild(divToRemoveFrom.children[1])
+
+            let removed = true
+            for (let index = 0; index < divToRemoveFrom.children.length; index++) {
+                const element = divToRemoveFrom.children[index];
+                if (element.textContent.includes("Fjern meg")) {
+                    removed = false
+                }
+            }
+
+            if (removed) {
+                solved++;
+            }
+        },
+
+        function removeAllDivsInParent() {
+            const container = document.getElementById("remove-all-divs")
+            // Bruk getElementByTagName til å fjerne alle divs
+            const divs = container.getElementsByTagName("div")
+            while(divs.length > 0){
+                divs[0].remove()
+            }
+            if (!container.innerHTML.includes("Fjern meg!") && container.innerHTML.includes("Spar meg!")) {
+                solved++;
+            }
+        },
+
+        function querySelector() {
+            const garden = document.getElementById("queue-container");
+
+            // Fjern den første div'en med klasse "cool"
+            garden.querySelector('.cool').remove()
+            if (garden.innerHTML.includes(2)) {
+                solved++;
+            }
+        },
+
+        function querySelectorAll() {
+            const garden = document.getElementById("weedy-garden");
+
+            // Fjern alt ugresset i "garden"
+
+            const weeds = garden.querySelectorAll(".weed")
+            weeds.forEach(weed => weed.remove())
+
+            // Test code
+            if (garden.innerHTML.includes("Blomst") && !garden.innerHTML.includes("Ugress")) {
+                solved++;
+            }
+
+        }
+    ]
+    window.addEventListener('load', () => tasks.forEach(task => task()))
+
+    window.addEventListener('load', () => console.log("Solved tests: " + solved + " of total: " + total))
+</script>
+
+</html>
