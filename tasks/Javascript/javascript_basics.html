@@ -46,18 +46,48 @@
             // const x = 2;
             // x = 1
         },
-        function UseLetOrConst() {
+        function useLetOrConst() {
             // Bruk let (eller const) istedet for var.
             var x = 1;
             if (true) {
                 var x = 2;
             }
 
-            checkAnswer(x===1, UseLetOrConst)
+            checkAnswer(x === 1, "UseLetOrConst")
         },
 
 
-        // Primitives ?
+        // Object 
+        function lookUpObject() {
+
+            function printAge(person) {
+                return ""
+            }
+            const person = {
+                firstName: 'John',
+                lastName: 'Doe',
+                age: 18,
+            }
+
+            checkAnswer(printAge(person) === 18, "lookUpObject")
+        },
+
+        // Arrays
+        function addToArray() {
+            let numbers = [6, 7];
+            // Legg til blant annet tallene 2 og 10 i numbers
+            // Sørg for at 10 er siste tall  og 2 er første tall i numbers
+
+            checkAnswer(numbers.includes(6) && numbers.includes(7) && numbers[0] === 2 && numbers[numbers.length - 1] === 10, "addToArray")
+
+        },
+
+        function arrayManipulation() {
+            const numbers = [1, 2, 3, 4]
+
+            // Bruk splice til å fjerne de tre første elementene i numbers
+            checkAnswer(numbers.length === 1 && numbers[0] === 4, "arrayManipulation")
+        },
 
         // Operators  
         function OperatorsIf() {
@@ -82,6 +112,7 @@
             checkAnswer(isOldEnough(john) && !isOldEnough(todd), "OperatorsSwitch")
         },
 
+        // For loops
         function useForLoopI() {
             const numbers = [1, 2, 3, 4, 5, 6];
             let output = [];
@@ -89,7 +120,6 @@
 
             checkAnswer(JSON.stringify(output) === JSON.stringify([2, 4, 6]), "UseForLoopI")
         },
-
 
         function useForLoopIBreak() {
             const numbers = [1, 2, 3, 4, 5, 6]
@@ -107,7 +137,8 @@
         function useFoorLoopIContinue() {
             const numbers = [1, 2, 3, 4, 5, 6];
             let output = [];
-            // add all even numbers to the  output array using continue
+            // Legg alle partal fra numbers array'en inn i output
+            // Bruk continue
             for (let index = 0; index < numbers.length; index++) {
                 let element = numbers[index]
                 if (element % 2 !== 0) {
@@ -118,7 +149,7 @@
 
             checkAnswer(JSON.stringify(output) === JSON.stringify([2, 4, 6]), "useForLoopIContinue")
         },
-        
+
         function useForOfLoop() {
             function reversify(stringToReverse) {
                 let output = "";
@@ -157,8 +188,9 @@
     ]
 
 
-    // Kjør oppgaver og vis score
+    // Kjør oppgaver
     tasks.forEach(task => task())
+    // Vis score
     printResults();
 
 </script>

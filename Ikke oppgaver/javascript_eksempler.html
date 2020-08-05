@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <style>
+        #container {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .row {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .button {
+            flex-grow: 0;
+        }
+
+        .pretty-print {
+            border-style: groove;
+            background-color: darkslategray;
+            color: white;
+            /* white-space: pre-line; */
+        }
+    </style>
+    <div id="container"></div>
+</body>
+<script>
+
+    function toggleCollapse(event) {
+        const parentId = event.target.parentNode.id
+        console.log(parentId)
+        clickedExample.querySelector(`${parentId} > pre`).toggleClassName('hidden')
+    }
+
+    function generateExampleRow(example, id) {
+
+        const runButton = document.createElement('button');
+        runButton.className = "button";
+        runButton.addEventListener('click', () => example.run());
+        runButton.innerText = "Kjør";
+
+        const rowContainer = document.createElement('div')
+        rowContainer.className = "row"
+        rowContainer.id = id;
+        rowContainer.insertAdjacentHTML('beforeend', `
+            <figure class="code-example">
+                <caption>${example.label}</caption>
+            <pre class="pretty-print">
+                <code>
+                ${example.run}
+                </code>
+            </pre>
+            </figure>`
+        )
+        rowContainer.insertAdjacentElement('beforeend', runButton)
+        return rowContainer
+    }
+
+    const examples = [
+        {
+            label: "Lambda/pil-funksjon",
+            run: () => {
+                // enkel pilfunksjon
+                hello = () => "Hello World!";
+
+                // med input
+                hello = (val) => "Hello " + val;
+
+                // trenger ikke () dersom det bare er en input parameter
+                hello = val => "Hello " + val;
+            }
+        },
+        {
+            label: "lambda: eksempel på bruk",
+            run: () => {
+                const materials = [
+                    'Hydrogen',
+                    'Helium',
+                    'Lithium',
+                    'Beryllium'
+                ];
+
+                console.log(materials.map(material => material.length));
+            }
+        },
+        {
+            label: "Destructuring",
+            run: () => {
+                let a, b, rest;
+                [a, b] = [10, 20];
+
+                console.log(a);
+                // expected output: 10
+
+                console.log(b);
+                // expected output: 20
+
+                [a, b, ...rest] = [10, 20, 30, 40, 50];
+                console.log(rest);
+                // expected output: Array [30,40,50]
+
+            }
+        },
+        {
+            label: "...rest parameters",
+            run: () => {
+                function myFun(a, b, ...manyMoreArgs) {
+                    console.log("a", a);
+                    console.log("b", b);
+                    console.log("manyMoreArgs", manyMoreArgs);
+                }
+
+                myFun("one", "two", "three", "four", "five", "six");
+
+                // Console Output:
+                // a, one
+                // b, two
+                // manyMoreArgs, [three, four, five, six]
+
+            }
+        },
+        {
+            label: "Spread syntax",
+            run: () => {
+                function myFunction(v, w, x, y, z) {
+                    console.log(`${v}, ${w}, ${x}, ${y}, ${z}`)
+                }
+                const args = [0, 1];
+                myFunction(-1, ...args, 2, ...[3]);
+
+                // er det samme som:
+                myFunction(-1, 0, 1, 2, 3);
+            }
+        },
+        {
+            label: "typeof",
+            run: () => {
+                console.log(typeof 42);
+                // expected output: "number"
+
+                console.log(typeof 'blubber');
+                // expected output: "string"
+
+                console.log(typeof true);
+                // expected output: "boolean"
+
+                console.log(typeof undeclaredVariable);
+                // expected output: "undefined"
+
+            }
+        }
+    ]
+    const container = document.getElementById("container")
+    examples.forEach((examples, index) => {
+        container.appendChild(generateExampleRow(examples, index))
+    });
+
+    // Prettyprint code
+    var ps = document.querySelectorAll(".pretty-print");
+    ps.forEach(p => {
+        p.textContent = p.textContent.split("() => {")[1]
+    });
+</script>
+
+</html>
