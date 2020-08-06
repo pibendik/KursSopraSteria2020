@@ -9,9 +9,15 @@
 - skru av og på CSS og JS for en hjemmeside, se hva som skjer.
 Bruk Web Developer
   https://www.vg.no/nyheter/innenriks/i/wPaWkM/sjeldent-syn-her-hopper-ubaatmannskapet-i-vannet - for eksempel
-- _Mangler eksempel: Å vise en side med betalingsmur og deaktivere den i html_
 - Vise quiz fusk: [link](https://www.nrk.no/kultur/quiz_-noreg-rundt-med-forfattarar-1.15008193)
-Dette er en god plass å fortelle at front-end og back-end har et tydelig skille, nemlig at i dette tilfellet er 100% _client side_.
+* [data-correctoption=true]  ny css regel
+* document
+* querySelectorAll()
+* ("[data-correctoption=true]")
+* forEach(button => button.click())
+* document.querySelectorAll("[data-correctoption=true]").forEach(button => button.click())
+
+* Dette er en god plass å fortelle at front-end og back-end har et tydelig skille, nemlig at i dette tilfellet er 100% _client side_.
 
 Detaljert rekkefølge:
 
@@ -32,7 +38,9 @@ Detaljert rekkefølge:
     * De skal vel alle sammen ha live server (ligger i .vscode/extensions)
     * vise extensions.json - hvilke extensions trengs.
     * og en rekke med extensions, lintere osv., for å kjenne igjen js, html, css, som emmet osv.?
+
 5. OPPGAVER:
+    * Oppgave 0: Få _noen_ til å lage extensions.json-fila og _alle andre_ til å pulle på nytt, og se at de får vscode til å anbefale å installere alle extensjonene.
     * Oppgave 1: De skal lage en side med alle disse tingene I:
 
 
@@ -69,14 +77,18 @@ Detaljert rekkefølge:
     Vi kan vise bilde av hvordan vi vil at resultatet skal bli.
     Vi kan avslutte dagen ved å vise hvordan de un-doer alle endringene vi gjorde, ved å se på git-historikken.
 
+    * Oppgave 3: Finne eksempel-side på internett og lime inn i prosjektet.
+
+
 Ekstraoppgaver/ting å se på:
 * Htmlcheatsheet
 * Git cheat sheet
 * w33schools
 * “husk å legge til alle ressursene vi plukker fram I bokmerke-mappe for kurset”
-* Finne eksempel-side på internett og lime inn i prosjektet.
     * http://www.tjelvar.se/
     * https://stripe.com/
     * https://no.wikipedia.org/wiki/JavaScript
     * w33schools for å finne eksempler også, og stjele
     * https://gitexplorer.com/
+
+

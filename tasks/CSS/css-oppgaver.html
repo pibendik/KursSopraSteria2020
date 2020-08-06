@@ -10,42 +10,102 @@
 
 
 <body>
-    <header>
-        <h1>Dette er den <i>skeiveste</i> overskriften!</h1>
-        <author>Noen har forfattet denne headeren...</author>
-    </header>
-    <h2>Her har vi en litt mindre overskrift.</h2>
-    <p> Span-tagger er litt annerledes fra andre tagger. Når du lager en lang tekst,
-        så vil du kanskje at noe av teksten <span class="fargetekst">er inne i en span</span>
-        slik at du kan gi den den avgrensede teksten egenskaper, som farge eller unik ID
-        (mer om det senere i kurset)</p>
-    <p><span class="span-er-kult">Span er kult!</span> men klasser skal vi først lære oss om i morgen.</p>
-    <h2>Vi har en ny liten overskrift her.</h2>
-    <p>Det hele gjør vi for å vise hvordan HTML-tagger er ment å oppmuntre til å produsere tekst som ser behagelig ut.
-        <span class="typografi">Typografi er en eldgammel kunst, som har blitt forfinet i over 1000 år!</span>
-    </p>
-    <ul>
-        <li>Når man skriver en hjemmeside slik, i ren HTML og CSS, blir den utrolig lettvektig!</li>
-        <li>Det gjør at browsere kan laste inn siden fort, til forskjell fra sider som bruker mye javascript.</li>
-        <li>Og så nytter det selvfølgelig å få litt innblikk i hvordan HTML ser ut</li>
-        <li>Det ser blant annet nesten alltid likt ut på alle skjermer</li>
-        <li>Alle kan lese teksten <small>med mindre den er veldig liten, eller definert som "small".</small></li>
-        <li>HTML-sider som dette er <a href="https://www.w3.org/TR/WCAG20/">tilrettelagt for alle</a>, slik at hvem som
-            helst kan lese dem, <small>men ikke alle kan lese liten tekst...</small></li>
-        <li>I\Med en slik side uten bilder gjør det ikke noe om brukeren for eksempel har lite mobildata.</li>
-        <li>Vi bruker kun gratis ressurser, og kan benytte oss av fonter som "Open Sans" <small>(som forresten ikke er
-                større enn
-                15.21kB)</small></li>
-        <li>Denne siden laster ikke inn noen store rammeverk, jquery, react osv, men holder seg til HTML, CSS3 og JS.
-            Det holder ting rent!</li>
-        <li>En annen måte å unngå at siden bruker mye plass er å bruke SVG i stedet for bilder når det er mulig. Det er
-            ikke påkrevd, men hvis du kan, <i>gjør det!</i>.</>
-        <li>Bruk litt <span class="colored" id="rbw" style="color: rgb(235, 207, 71);">farger</span> i teksten din.</li>
-        <li>Linker må ikke nødvendigvis være <span class="sb">sånn standard blå</span> som browseren tegner dem, eller
-            sånn
-            <span class="sv">fiolett</span> når de har blitt besøkt heller, bare gi dem en <a
-                href="http://www.colorhexa.com/0077aa">fin farge</a></li>
-    </ul>
+    <article>
+        <section>
+            <header>
+                <h1>Dette er den <i>skeiveste</i> overskriften!</h1>
+                <author>Noen har forfattet denne headeren...</author>
+            </header>
+            <h2>Her har vi en litt mindre overskrift.</h2>
+            <p> Span-tagger er litt annerledes fra andre tagger. Når du lager en lang tekst,
+                så vil du kanskje at noe av teksten <span class="fargetekst">er inne i en span</span>
+                slik at du kan gi den den avgrensede teksten egenskaper, som farge eller unik ID
+                (mer om det senere i kurset)</p>
+            <p>Vi legger den øverste delen av siden, den som handler om ulike tagger og slikt, fram til bildet
+                av elefantene, inne i article-tagger.
+            </p>
+            <p>
+                inni der er det hele delt inn i to seksjoner. Den første tar for seg alt fra starten av til
+                informasjonen
+                om lenker.
+            </p>
+            <p><span class="span-er-kult">Span er kult!</span> men klasser skal vi først lære oss om i morgen.</p>
+            <h2>Vi har en ny liten overskrift her.</h2>
+            <p>Det hele gjør vi for å vise hvordan HTML-tagger er ment å oppmuntre til å produsere tekst som ser
+                behagelig
+                ut.
+                <span class="typografi">Typografi er en eldgammel kunst, som har blitt forfinet i over 1000 år!</span>
+            </p>
+            <ul>
+                <li>Når man skriver en hjemmeside slik, i ren HTML og CSS, blir den utrolig lettvektig!</li>
+                <li>Det gjør at browsere kan laste inn siden fort, til forskjell fra sider som bruker mye javascript.
+                </li>
+                <li>Og så nytter det selvfølgelig å få litt innblikk i hvordan HTML ser ut</li>
+                <li>Det ser blant annet nesten alltid likt ut på alle skjermer</li>
+                <li>Alle kan lese teksten <small>med mindre den er veldig liten, eller definert som "small".</small>
+                </li>
+                <li>HTML-sider som dette er <a href="https://www.w3.org/TR/WCAG20/">tilrettelagt for alle</a>, slik at
+                    hvem som helst kan lese dem, <small>men ikke alle kan lese liten tekst...</small></li>
+                <li>I\Med en slik side uten bilder gjør det ikke noe om brukeren for eksempel har lite mobildata.</li>
+                <li>Vi bruker kun gratis ressurser, og kan benytte oss av fonter som "Open Sans" <small>(som forresten
+                        ikke er større enn 15.21kB)</small></li>
+                <li>Denne siden laster ikke inn noen store rammeverk, jquery, react osv, men holder seg til HTML, CSS3
+                    og JS. Det holder ting rent!</li>
+                <li>En annen måte å unngå at siden bruker mye plass er å bruke SVG i stedet for bilder når det er mulig.
+                    Det er ikke påkrevd, men hvis du kan, <i>gjør det!</i>.
+                </li>
+                <li>Bruk litt <span class="colored" id="rbw" style="color: rgb(235, 207, 71);">farger</span> i teksten
+                    din.
+                </li>
+                <li>Linker må ikke nødvendigvis være <span class="sb">sånn standard blå</span> som browseren tegner dem,
+                    eller sånn <span class="sv">fiolett</span> når de har blitt besøkt heller, bare gi dem en <a
+                        href="http://www.colorhexa.com/0077aa">fin farge</a></li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Overskrift, for ny seksjon!</h2>
+            <p>
+                Dette er en paragraf om at det fra gammelt av var vanlig med tabeller. De er inndelt i thead (table
+                head),
+                tr (table row), th (table header) og tbody (table body). Det er i hvertfall følgende tabell. Med colspan
+                kan
+                man
+                justere hvor mange kolonner en greie skal strekke seg over, så om tabellen har fire kolonner, og man vil
+                at
+                tabell-overskriften skal strekke seg over alle fire, så kan man gi den colspan="4".
+            </p>
+            <table>
+                <thead>
+                    <tr>
+                        <th colspan="4">
+                            Table-header (må være i en tr)
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th>Bedrift</th>
+                        <th>Lokaler</th>
+                        <th>Befolkning</th>
+                        <th>Språk</th>
+                    </tr>
+                    <tr>
+                        <td>Sopra Steria</td>
+                        <td>Oslo</td>
+                        <td>Soprasterianere</td>
+                        <td>Memes</td>
+                    </tr>
+                    <tr>
+                        <td>Nav</td>
+                        <td>Oslo</td>
+                        <td>Navere</td>
+                        <td>Jus</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </article>
 
     <h2>Det er fint med bilder</h2>
     <div class="posisjonering">
@@ -92,7 +152,7 @@
             <span class="mfw">bettermotherfuckingwebsite</span></a>.
     </p>
 
-    <img  src="../../Ikke oppgaver/aside.gif">
+    <img id="imgg" src="../../Ikke oppgaver/aside.gif">
 
 
 </body>

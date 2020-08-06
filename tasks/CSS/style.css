@@ -1,5 +1,5 @@
 /**
-** Her øverst står det ulike tagger som du skal putte inn egendefinerte css-regler i.
+** Her står det ulike tagger som du skal putte inn egendefinerte css-regler i.
 */
 html {
     /** Legg inn finere fonter!
@@ -91,7 +91,7 @@ ul>a {
     /** velg styling til teksten det ene <span>-elementet som har id-en "typografi" */
 }
 
-img {
+#imgg {
     /**
     * Sett display til noe som ikke er usynlig
     */
