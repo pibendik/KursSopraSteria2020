@@ -95,9 +95,34 @@
     </div>
 </body>
 <script>
-    let solved = 0;
-    let total = 2;
+    // Setup
+    "use strict";
 
+    let unsolvedTasks = []
+    let solvedTasks = []
+    function checkAnswer(condition, taskName) {
+        if (condition) {
+            solvedTasks.push(`😃 Oppgave ${taskName}`)
+        } else {
+            unsolvedTasks.push(`🤔 Oppgave ${taskName}`)
+        }
+    }
+
+    function printResults() {
+        console.groupCollapsed(`%c ✔ ${solvedTasks.length} av ${tasks.length} oppgaver løst`, 'background: #15574F; color: white;')
+        solvedTasks.forEach(taskString => {
+            console.log(taskString)
+        })
+        console.groupEnd();
+        console.group(`${unsolvedTasks.length} uløste oppgaver`)
+        unsolvedTasks.forEach(taskString => {
+            console.log(`%c ${taskString}`, 'background: #ffff66; color: black; font-size: 16px;')
+        })
+        console.groupEnd();
+        console.log(`${solvedTasks.length} av ${tasks.length} oppgaver løst`)
+    }
+
+    // end setup
     const tasks = [
         function addElementToDiv() {
 
@@ -109,12 +134,7 @@
 
             // Legg element til i parentDiv 
             parentDiv.appendChild(addMe)
-            if (parentDiv.children.length > 1) {
-                solved++;
-            } else {
-                console.error(":C")
-            }
-
+            checkAnswer(parentDiv.children.length > 1, addElementToDiv.name)
         },
 
         function removeElementFromDiv() {
@@ -131,21 +151,17 @@
                 }
             }
 
-            if (removed) {
-                solved++;
-            }
+            checkAnswer(removed, removeElementFromDiv.name)
         },
 
         function removeAllDivsInParent() {
             const container = document.getElementById("remove-all-divs")
             // Bruk getElementByTagName til å fjerne alle divs
             const divs = container.getElementsByTagName("div")
-            while(divs.length > 0){
+            while (divs.length > 0) {
                 divs[0].remove()
             }
-            if (!container.innerHTML.includes("Fjern meg!") && container.innerHTML.includes("Spar meg!")) {
-                solved++;
-            }
+            checkAnswer(!container.innerHTML.includes("Fjern meg!") && container.innerHTML.includes("Spar meg!"), removeAllDivsInParent.name)
         },
 
         function querySelector() {
@@ -153,9 +169,7 @@
 
             // Fjern den første div'en med klasse "cool"
             garden.querySelector('.cool').remove()
-            if (garden.innerHTML.includes(2)) {
-                solved++;
-            }
+            checkAnswer(!garden.innerHTML.includes(2), querySelector.name)
         },
 
         function querySelectorAll() {
@@ -167,15 +181,13 @@
             weeds.forEach(weed => weed.remove())
 
             // Test code
-            if (garden.innerHTML.includes("Blomst") && !garden.innerHTML.includes("Ugress")) {
-                solved++;
-            }
-
+            checkAnswer(garden.innerHTML.includes("Blomst") && !garden.innerHTML.includes("Ugress"), querySelectorAll.name)
         }
     ]
-    window.addEventListener('load', () => tasks.forEach(task => task()))
-
-    window.addEventListener('load', () => console.log("Solved tests: " + solved + " of total: " + total))
+    window.addEventListener('load', () => {
+        tasks.forEach(task => task());
+        printResults();
+    })
 </script>
 
 </html>

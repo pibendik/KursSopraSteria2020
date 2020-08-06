@@ -11,78 +11,111 @@
 
 </body>
 <script>
-  let solved = 0;
-  let total = 3;
+  // Setup
+  "use strict";
 
-  (function useDescructuringArray() {
-    const array = [...Array(20).keys()];
-    const [first, second, ...rest] = array;
-    // Put the first and second element last
-    const newArray = [...rest, first, second]
-
-    // NO TOUCHY!
-    if (newArray[newArray.length - 2] === 0 && newArray[newArray.length - 1] === 1) {
-      solved++;
+  let unsolvedTasks = []
+  let solvedTasks = []
+  function checkAnswer(condition, taskName) {
+    if (condition) {
+      solvedTasks.push(`😃 Oppgave ${taskName}`)
+    } else {
+      unsolvedTasks.push(`🤔 Oppgave ${taskName}`)
     }
-  })();
+  }
 
-  (function useDesctructuringObject1() {
-    const person = { firstName: "John", lastName: "Doe", age: "18" }
+  function printResults() {
+    console.groupCollapsed(`%c ✔ ${solvedTasks.length} av ${tasks.length} oppgaver løst`, 'background: #15574F; color: white;')
+    solvedTasks.forEach(taskString => {
+      console.log(taskString)
+    })
+    console.groupEnd();
+    console.group(`${unsolvedTasks.length} uløste oppgaver`)
+    unsolvedTasks.forEach(taskString => {
+      console.log(`%c ${taskString}`, 'background: #ffff66; color: black; font-size: 16px;')
+    })
+    console.groupEnd();
+    console.log(`${solvedTasks.length} av ${tasks.length} oppgaver løst`)
+  }
 
-    let firstName;
-    let lastName;
-    // Bruk desctructuring til å hente firstName og lastName
-    ({ firstName, lastName } = person);
+  // end setup
 
-    // NO TOUCHY!
-    if (firstName === "John" && lastName === "Doe") {
-      solved++;
+  const tasks = [
+    function useDescructuringArray() {
+      const array = [...Array(20).keys()];
+      const [first, second, ...rest] = array;
+      // Put the first and second element last
+      const newArray = [...rest, first, second]
+
+      // NO TOUCHY!
+      checkAnswer(newArray[newArray.length - 2] === 0 && newArray[newArray.length - 1] === 1, useDescructuringArray.name)
+    },
+
+    function useDesctructuringObject1() {
+      const person = { firstName: "John", lastName: "Doe", age: "18" }
+
+      let firstName;
+      let lastName;
+      // Bruk desctructuring til å hente firstName og lastName
+      ({ firstName, lastName } = person);
+
+      // NO TOUCHY!
+      checkAnswer(firstName === "John" && lastName === "Doe", useDesctructuringObject1.name)
+    },
+
+    // Kommenter ut teksten under med ctrl + k -> c / ctrl + k -> u
+    function useDesctructuringObject2() {
+        const person = { firstName: "John", lastName: "Doe", age: "18" }
+
+        // Bruk desctructuring til å hente firstName og lastName
+        const { firstName, lastName } = person
+
+        // NO TOUCHY!
+        checkAnswer(firstName === "John" && lastName === "Doe", useDesctructuringObject2.name)
+    },
+
+    function nestedDestructuring() {
+      const catalog = {
+        meta: 'asdf',
+        persons: [
+          { name: "John Doe", age: "18" },
+          { name: "Fritjof", age: "???" }
+        ]
+      }
+
+
+      // Bruk nested desctructuring til å hente admin sin "name" property
+      let { persons: [{ name }] } = catalog;
+
+      // NO TOUCHY!
+      checkAnswer(name === "John Doe", nestedDestructuring.name)
+    },
+
+    function desctructuringDefaultValues() {
+      const arr = [2, 3]
+
+      // Bruk "default values" på c og d
+      const [a, b, c = 4, d = undefined] = arr;
+
+      checkAnswer(c === 4 && d === undefined, desctructuringDefaultValues.name)
+    },
+
+    function useRestParams() {
+      const array = [...Array(20).keys()];
+      const [first, second, ...rest] = array;
+      // Put the first and second element last
+      const newArray = [...rest, first, second]
+
+      // NO TOUCHY!
+      checkAnswer(newArray[newArray.length - 2] === 0 && newArray[newArray.length - 1] === 1)
     }
-  })();
+  ]
 
-  // Kommenter ut teksten under med ctrl + k -> c / ctrl + k -> u
-  // (function useDesctructuringObject2() {
-  //     const person = { firstName: "John", lastName: "Doe", age: "18" }
+  // Kjør oppgaver
+  tasks.forEach(task => task())
+  // Vis score
+  printResults();
 
-  //     // Bruk desctructuring til å hente firstName og lastName
-
-
-  //     // NO TOUCHY!
-  //     if(firstName === "John" && lastName === "Doe"){
-  //       solved++;
-  //     }
-  // })();
-
-  (function nestedDestructuring() {
-    const persons = {
-      admin: { name: "John Doe", age: "18" },
-      notAdmin: { name: "Fritjof", age: "???" }
-    }
-
-
-    // Bruk nested desctructuring til å hente admin sin "name" property
-    let { name } = person;
-
-    // NO TOUCHY!
-    if (name === "John Doe") {
-      solved++;
-    }
-  })();
-
-  (function useRestParams() {
-    const array = [...Array(20).keys()];
-    const [first, second, ...rest] = array;
-    // Put the first and second element last
-    const newArray = [...rest, first, second]
-
-    // NO TOUCHY!
-    if (newArray[newArray.length - 2] === 0 && newArray[newArray.length - 1] === 1) {
-      solved++;
-    }
-  })();
-
-
-  console.log("Solved tests: " + solved + " of total: " + total)
 </script>
 
 </html>
