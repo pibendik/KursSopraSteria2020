@@ -11,17 +11,10 @@
 <body>
     <style>
         #container {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .row {
-            display: flex;
-            flex-direction: row;
-        }
-
-        .button {
-            flex-grow: 0;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-auto-flow: row;
+            font-size: 18px;
         }
 
         .pretty-print {
@@ -29,6 +22,9 @@
             background-color: darkslategray;
             color: white;
             /* white-space: pre-line; */
+        }
+        button {
+            margin: 50px;
         }
     </style>
     <div id="container"></div>
@@ -55,14 +51,12 @@
             <figure class="code-example">
                 <caption>${example.label}</caption>
             <pre class="pretty-print">
-                <code>
                 ${example.run}
-                </code>
             </pre>
             </figure>`
         )
-        rowContainer.insertAdjacentElement('beforeend', runButton)
-        return rowContainer
+        runButton
+        return [rowContainer, runButton]
     }
 
     const examples = [
@@ -80,7 +74,7 @@
             }
         },
         {
-            label: "lambda: eksempel på bruk",
+            label: "Lambda: eksempel på bruk",
             run: () => {
                 const materials = [
                     'Hydrogen',
@@ -161,7 +155,9 @@
     ]
     const container = document.getElementById("container")
     examples.forEach((examples, index) => {
-        container.appendChild(generateExampleRow(examples, index))
+        const [exampleFig, button] = generateExampleRow(examples, index);
+        container.appendChild(exampleFig)
+        container.appendChild(button)
     });
 
     // Prettyprint code
