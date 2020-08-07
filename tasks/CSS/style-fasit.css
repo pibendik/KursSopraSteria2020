@@ -18,6 +18,13 @@ figure {
     /** Denne vil vi skal flyte til venstre*/
     float: left;
     margin: 1rem 3rem 1rem 1rem;
+    transition: 1s;
+    padding: 9px;
+}
+
+figure:hover {
+    transition: 1s;
+    box-shadow: 4px 4px 4px 4px #aaaaaa;
 }
 
 figure img {
@@ -73,7 +80,7 @@ video {
 }
 
 ul a {
-    /** alle lenker (anchor, eller "a") som er inne i en un-ordered list (ul), får følgende egenskaper */
+    /** alle lenker ("anchor", eller "a") som er inne i en un-ordered list (ul), får følgende egenskaper */
 }
 
 ul>a {
@@ -85,9 +92,16 @@ ul>a {
 }
 
 /**
-*   ID defineres med skigard eller "hashtag" (#) i css-fila.
+*   ID defineres med skigard (#) i css-fila.
 *   En ID skal kun referere til et unikt objekt på siden
 */
 #typografi {
-    /** velg styling til teksten det ene <span>-elementet som har id-en "typografi" */
+    /** velg styling til teksten i det ene <span>-elementet som har id-en "typografi" */
+}
+
+#imgg {
+    /**
+    * Sett display til noe som ikke er usynlig
+    */
+    display: none;
 }
