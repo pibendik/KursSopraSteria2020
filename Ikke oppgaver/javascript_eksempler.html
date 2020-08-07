@@ -61,12 +61,15 @@
     const examples = [{
             label: "primitiver",
             run: () => {
-                let /**int*/ myNum = 5; // heltall
-                let /**float*/ myFloatNum = 5.99.f; // desimaltall
-                let /**char*/ myLetter = 'D'; // bokstav
-                let /**boolean*/ myBool = true; // boolsk verdi
-                let /**String*/ myText = "Hello"; // tekststreng
-
+                let /**int*/     myNum = 5;             // heltall
+                
+                let /**float*/   myFloatNum = 5.99.f;   // desimaltall
+                
+                let /**char*/    myLetter = 'D';        // bokstav
+                
+                let /**boolean*/ myBool = true;         // boolsk verdi
+                
+                let /**String*/  myText = "Hello";      // tekststreng
             }
         },
         {
@@ -83,7 +86,6 @@
 
                 console.log(typeof undeclaredVariable);
                 // expected output: "undefined"
-
             }
         },
         {
@@ -178,7 +180,6 @@
                 [a, b, ...rest] = [10, 20, 30, 40, 50];
                 console.log(rest);
                 // expected output: Array [30,40,50]
-
             }
         },
         {
@@ -191,12 +192,6 @@
                 }
 
                 myFun("one", "two", "three", "four", "five", "six");
-
-                // Console Output:
-                // a, one
-                // b, two
-                // manyMoreArgs, [three, four, five, six]
-
             }
         },
         {

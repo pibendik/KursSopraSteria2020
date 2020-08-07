@@ -25,30 +25,6 @@ Detaljert rekkefølge:
 5. OPPGAVER:
     * Oppgave 1: De skal lage en side med alle disse tingene I:
 
-        ### Eksempel på rekkefølge:
-        * `<h1> </h1>` - lag en overskrift
-        * `<h3> </h3>` - lag en overskrift for en artikkel
-        * `<article> </article>` - fyll inn innhold inne i artikkelen
-        * `<section> </section>` - del inn artikkelen i seksjoner
-        * `<aside> </aside>` - noe som ikke henger tematisk sammen med innholdet i resten av artikkelen
-        * `<b> </b> <strong> </strong> <i> </i>` - slik kan du fremheve tekst
-        * `<button> </button>` - lag en knapp, og putt tekst i knappen!
-
-        * `<header> </header>` - Det går an å ha en separat del helt øverst på siden, og da putter man den i en header-tag.
-        * `<footer> </footer>` - Fyll inn navn på forfatter, lenker til sosiale media osv., som typisk er å finne nederst på en side
-        
-        * `<img src="_____">` - legg ved et bilde, se https://www.w3schools.com/TAGs/tag_img.asp
-        * `<a> </a>` - gjør noe om til en lenke ("anchor")
-        * `<iframe>` - "embed," eller "bygg inn" en youtube-video eller en spotify-spiller, eller en hel annen nettside!
-        * `<nav>` - ekstra oppgave! Navigering på siden gjøres med "nav"-tagger.
-
-        ### andre tagger det er godt å vite om:
-        * `<head> </head>` - definerer kompliserte ting for nørder (container for metadata)
-        * `<body> </body>` - inneholder hele "skjelettet" til siden
-        * `<div> </div>` - ALLTID BARE BRUK DENNE
-        * `<span> </span>` - litt som \<div>, men typisk for bokstaver og ikke større greier, typisk midt i en setning.
-            * Div og span har ikke styling (de er non-semantic, som \<b> og \<i>, vs semantic, som \<span> og \<div>)
-
         * https://www.w3schools.com/TAGs/ - info om alle taggene!
         * https://lipsum.com/ - her finner dere brødtekst til å fylle på hjemmesidene deres
 
@@ -73,3 +49,29 @@ Ekstraoppgaver/ting å se på:
     * https://gitexplorer.com/
 
 
+## CSS - Eventuelt, hvis tid:
+
+1. Bra vs. dårlig implementering av parallakse
+    * Hvis man gjør dette i javascript, blir det tregt, laggete, og ubehagelig
+    * Hvis man gjør det i ren css, så kan det bli smooooth #snoopdogg
+1. Inherit, set,
+1. Animere css: https://www.youtube.com/watch?v=HZHHBwzmJLk
+1. Legge til "cards" der hvor det var bilder av svenske krigs-piloter:
+    * https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_cards
+
+
+<hr>
+
+## Pensum CSS:
+    Style HTML text properties
+    Apply styles to text appearance; apply styles to text font, including WOFF, @font-face, size, and understudy fonts; apply styles to text alignment, spacing, and indentation; apply styles to text hyphenation; apply styles for a text drop shadow
+    Style HTML box properties
+    Apply styles to alter appearance attributes, including size, borders, rounded corners, outline, padding, and margin; apply styles to alter graphic effects, including transparency, opacity, background image, gradients, shadow, and clipping; apply styles to establish and change an element’s position
+    Create a flexible content layout
+    Implement a layout using a flexible box model; implement a multi-column layout; implement a layout using position floating and exclusions; implement a layout using grid alignment; implement a layout using regions, grouping, and nesting
+    Create an animated and adaptive UI
+    Animate objects by applying CSS transitions; apply 3-D and 2-D transformations; adjust UI based on media queries, including device adaptations for output formats, displays, and representations; hide or disable controls
+    Find elements by using CSS selectors and JQuery
+    Choose the correct selector to reference an element; define element, style, and attribute selectors; find elements by using pseudo-elements and pseudo-classes
+    Structure a CSS file by using CSS selectors
+    Reference elements correctly; implement inheritance; override inheritance by using !important; style an element based on pseudo-elements and pseudo-classes
