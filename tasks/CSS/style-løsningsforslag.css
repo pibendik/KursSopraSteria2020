@@ -97,6 +97,7 @@ ul>a {
 */
 #typografi {
     /** velg styling til teksten i det ene <span>-elementet som har id-en "typografi" */
+    background-color: hotpink;
 }
 
 #imgg {
