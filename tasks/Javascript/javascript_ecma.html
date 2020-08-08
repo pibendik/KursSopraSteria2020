@@ -36,6 +36,12 @@
     })
     console.groupEnd();
     console.log(`${solvedTasks.length} av ${tasks.length} oppgaver løst`)
+
+    if (solvedTasks.length === tasks.length) {
+      const img = document.createElement('img')
+      img.src = '../../Ikke oppgaver/aside.gif'
+      document.body.appendChild(img)
+    }
   }
 
   // end setup
@@ -65,13 +71,13 @@
 
     // Kommenter ut teksten under med ctrl + k -> c / ctrl + k -> u
     function useDesctructuringObject2() {
-        const person = { firstName: "John", lastName: "Doe", age: "18" }
+      const person = { firstName: "John", lastName: "Doe", age: "18" }
 
-        // Bruk desctructuring til å hente firstName og lastName
-        const { firstName, lastName } = person
+      // Bruk desctructuring til å hente firstName og lastName
+      const { firstName, lastName } = person
 
-        // NO TOUCHY!
-        checkAnswer(firstName === "John" && lastName === "Doe", useDesctructuringObject2.name)
+      // NO TOUCHY!
+      checkAnswer(firstName === "John" && lastName === "Doe", useDesctructuringObject2.name)
     },
 
     function nestedDestructuring() {

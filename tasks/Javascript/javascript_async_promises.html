@@ -19,7 +19,7 @@
 <script>
     // setup
     let solved = 0;
-    let total = 3;
+    let total = 4;
     function addJokeToList(joke) {
         const newItem = document.createElement('li')
         newItem.textContent = joke.value
@@ -95,6 +95,11 @@
 
     function displayScore() {
         console.log("Solved tests: " + solved + " of total: " + total)
+        if(solved !== total){
+            const img = document.createElement('img')
+            img.src = '../../Ikke oppgaver/aside.gif'
+            document.body.appendChild(img)
+        }
     }
 
 </script>

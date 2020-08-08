@@ -120,6 +120,12 @@
         })
         console.groupEnd();
         console.log(`${solvedTasks.length} av ${tasks.length} oppgaver løst`)
+
+        if(solvedTasks.length === tasks.length){
+            const img = document.createElement('img')
+            img.src = '../../Ikke oppgaver/aside.gif'
+            document.body.appendChild(img)
+        }
     }
 
     // end setup
@@ -174,7 +180,6 @@
 
         function querySelectorAll() {
             const garden = document.getElementById("weedy-garden");
-
             // Fjern alt ugresset i "garden"
 
             const weeds = garden.querySelectorAll(".weed")
@@ -182,7 +187,9 @@
 
             // Test code
             checkAnswer(garden.innerHTML.includes("Blomst") && !garden.innerHTML.includes("Ugress"), querySelectorAll.name)
-        }
+        },
+
+
     ]
     window.addEventListener('load', () => {
         tasks.forEach(task => task());

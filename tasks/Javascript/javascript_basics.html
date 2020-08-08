@@ -8,7 +8,7 @@
 </head>
 
 <body>
-
+    
 </body>
 <script>
     // Setup
@@ -36,6 +36,12 @@
         })
         console.groupEnd();
         console.log(`${solvedTasks.length} av ${tasks.length} oppgaver løst`)
+        
+        if(solvedTasks.length === tasks.length){
+            const img = document.createElement('img')
+            img.src = '../../Ikke oppgaver/aside.gif'
+            document.body.appendChild(img)
+        }
     }
 
     // end setup
@@ -187,7 +193,6 @@
             checkAnswer(JSON.stringify(Object.keys(testTlfKatalog)) === JSON.stringify(extractedNames), "useForInLoop")
         }
     ]
-
 
     // Kjør oppgaver
     tasks.forEach(task => task())
