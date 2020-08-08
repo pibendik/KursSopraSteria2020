@@ -8,7 +8,9 @@
 </head>
 
 <body>
-
+  <h1>
+    ctrl + shift + i <br> for å åpne konsollen
+  </h1>
 </body>
 <script>
   // Setup
@@ -48,10 +50,12 @@
 
   const tasks = [
     function useDescructuringArray() {
+
       const array = [...Array(20).keys()];
       const [first, second, ...rest] = array;
-      // Put the first and second element last
-      const newArray = [...rest, first, second]
+
+      // Put the first and second element last with destructuring
+      const newArray = [/** code here */]
 
       // NO TOUCHY!
       checkAnswer(newArray[newArray.length - 2] === 0 && newArray[newArray.length - 1] === 1, useDescructuringArray.name)
@@ -63,21 +67,19 @@
       let firstName;
       let lastName;
       // Bruk desctructuring til å hente firstName og lastName
-      ({ firstName, lastName } = person);
 
       // NO TOUCHY!
       checkAnswer(firstName === "John" && lastName === "Doe", useDesctructuringObject1.name)
     },
 
-    // Kommenter ut teksten under med ctrl + k -> c / ctrl + k -> u
+    // Kommenter ut teksten under som starter med "const person =..." med ctrl + k -> c / ctrl + k -> u
     function useDesctructuringObject2() {
-      const person = { firstName: "John", lastName: "Doe", age: "18" }
+      //   const person = { firstName: "John", lastName: "Doe", age: "18" }
 
-      // Bruk desctructuring til å hente firstName og lastName
-      const { firstName, lastName } = person
+      //   // Bruk desctructuring til å hente firstName og lastName
 
       // NO TOUCHY!
-      checkAnswer(firstName === "John" && lastName === "Doe", useDesctructuringObject2.name)
+      checkAnswer(false, useDesctructuringObject2.name)
     },
 
     function nestedDestructuring() {
@@ -91,7 +93,7 @@
 
 
       // Bruk nested desctructuring til å hente admin sin "name" property
-      let { persons: [{ name }] } = catalog;
+      // denne er kronglete ved første øyekast, men ganske praktisk å kunne!
 
       // NO TOUCHY!
       checkAnswer(name === "John Doe", nestedDestructuring.name)
@@ -100,17 +102,22 @@
     function desctructuringDefaultValues() {
       const arr = [2, 3]
 
-      // Bruk "default values" på c og d
-      const [a, b, c = 4, d = undefined] = arr;
+      const c = 2;
+      const d = 2;
+      // Fjern definisjonene av c og d
+      // Så bruker du destructuring til å definere a og b til verdiene i arr
+      // ... og på samme linje setter du c og d til 4 og udefined!
 
+      // NO TOUCHY!
       checkAnswer(c === 4 && d === undefined, desctructuringDefaultValues.name)
     },
 
     function useRestParams() {
       const array = [...Array(20).keys()];
       const [first, second, ...rest] = array;
-      // Put the first and second element last
-      const newArray = [...rest, first, second]
+
+      // sett første og andre element nest sist og sist i newArray:
+      const newArray = []
 
       // NO TOUCHY!
       checkAnswer(newArray[newArray.length - 2] === 0 && newArray[newArray.length - 1] === 1)
