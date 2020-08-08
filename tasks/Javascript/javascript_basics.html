@@ -19,6 +19,7 @@
 
     let unsolvedTasks = []
     let solvedTasks = []
+
     function checkAnswer(condition, taskName) {
         if (condition) {
             solvedTasks.push(`😃 Oppgave ${taskName}`)
@@ -28,7 +29,8 @@
     }
 
     function printResults() {
-        console.groupCollapsed(`%c ✔ ${solvedTasks.length} av ${tasks.length} oppgaver løst`, 'background: #15574F; color: white;')
+        console.groupCollapsed(`%c ✔ ${solvedTasks.length} av ${tasks.length} oppgaver løst`,
+            'background: #15574F; color: white;')
         solvedTasks.forEach(taskString => {
             console.log(taskString)
         })
@@ -39,8 +41,8 @@
         })
         console.groupEnd();
         console.log(`${solvedTasks.length} av ${tasks.length} oppgaver løst`)
-        
-        if(solvedTasks.length === tasks.length){
+
+        if (solvedTasks.length === tasks.length) {
             const img = document.createElement('img')
             img.src = '../../Ikke oppgaver/aside.gif'
             document.body.appendChild(img)
@@ -50,12 +52,16 @@
     // end setup
 
     const tasks = [
+
         function () {
-            // // Fiks koden
-            let x = 2;
+            // Fiks koden! Det er en const (altså konstant) som vi endrer på! Det er ikke noe bra!
+            const x = 2;
             x = 1
+            
+            // ikke rør koden under her
             checkAnswer(true, "const")
         },
+
         function useLetOrConst() {
             // Bruk let (eller const) istedet for var.
             var x = 1;
@@ -63,112 +69,136 @@
                 var x = 2;
             }
 
+            // ikke rør koden under her
             checkAnswer(x === 1, "UseLetOrConst")
         },
-
 
         // Object 
         function lookUpObject() {
 
             function printAge(person) {
-                return ""
+                // sett inn kode her
             }
+
+            // ikke rør koden under her
             const person = {
                 firstName: 'John',
                 lastName: 'Doe',
                 age: 18,
             }
-
             checkAnswer(printAge(person) === 18, "lookUpObject")
         },
 
         // Arrays
         function addToArray() {
+
             let numbers = [6, 7];
-            // Legg til blant annet tallene 2 og 10 i numbers
+
+            // Legg til blant annet tallene 2 og 10 i numbers med sånt som push og unshift.
             // Sørg for at 10 er siste tall  og 2 er første tall i numbers
 
-            checkAnswer(numbers.includes(6) && numbers.includes(7) && numbers[0] === 2 && numbers[numbers.length - 1] === 10, "addToArray")
+            // ikke rør koden under her
+            checkAnswer(numbers.includes(6) && numbers.includes(7) && numbers[0] === 2 && numbers[numbers.length -
+                1] === 10, "addToArray")
 
         },
 
         function arrayManipulation() {
+
             const numbers = [1, 2, 3, 4]
 
             // Bruk splice til å fjerne de tre første elementene i numbers
+
+            // ikke rør koden under her
             checkAnswer(numbers.length === 1 && numbers[0] === 4, "arrayManipulation")
         },
 
         // Operators  
         function OperatorsIf() {
+
             // Bruk if else for å validere om personen er gammel nok til å ta lappen
             function isOldEnough(person) {
                 // Kode her
             }
 
-            const john = { name: "John", age: 18 }
-            const todd = { age: 17 }
+            // ikke rør koden under her
+            const john = {
+                name: "John",
+                age: 18
+            }
+            const todd = {
+                age: 17
+            }
             checkAnswer(isOldEnough(john) && !isOldEnough(todd), "OperatosIf")
         },
 
         function OperatorsSwitch() {
+
             // Bruk switch for å validere om personen er gammel nok til å ta lappen
-            function isOldEnough(age) {
+            function isOldEnough(person) {
                 // Kode her
             }
 
-            const john = { name: "John", age: 18 }
-            const todd = { age: 17 }
+            // ikke rør koden under her
+            const john = {
+                name: "John",
+                age: 18
+            }
+            const todd = {
+                age: 17
+            }
             checkAnswer(isOldEnough(john) && !isOldEnough(todd), "OperatorsSwitch")
         },
 
         // For loops
         function useForLoopI() {
+
             const numbers = [1, 2, 3, 4, 5, 6];
             let output = [];
             // Bruk en for-løkke for å legge til alle heltall fra numbers i output
 
+            // ikke rør koden under her
             checkAnswer(JSON.stringify(output) === JSON.stringify([2, 4, 6]), "UseForLoopI")
         },
 
         function useForLoopIBreak() {
+
             const numbers = [1, 2, 3, 4, 5, 6]
             let output = [];
-            // Bruke break keyword'et til å legge de første 3 elementene i nubmers i output
 
+            // Bruk break keyword'et til å legge de første 3 elementene i nubmers i output
             for (let index = 0; index < numbers.length; index++) {
                 const element = numbers[index];
                 output.push(element);
             }
 
+            // ikke rør koden under her
             checkAnswer(JSON.stringify(output) === JSON.stringify([1, 2, 3]), "useForLoopIBreak")
         },
 
         function useFoorLoopIContinue() {
+
             const numbers = [1, 2, 3, 4, 5, 6];
             let output = [];
+
             // Legg alle partal fra numbers array'en inn i output
             // Bruk continue
             for (let index = 0; index < numbers.length; index++) {
                 let element = numbers[index]
-                if (element % 2 !== 0) {
-                    continue;
-                }
                 output.push(element)
             }
 
+            // ikke rør koden under her
             checkAnswer(JSON.stringify(output) === JSON.stringify([2, 4, 6]), "useForLoopIContinue")
         },
 
         function useForOfLoop() {
+
             function reversify(stringToReverse) {
                 let output = "";
 
                 // for... of løkke for å reversere stringToReserve input parameteren
-                for (const char of stringToReverse) {
-                    output = char + output
-                }
-
+                
                 return output;
             }
 
@@ -180,20 +210,18 @@
                 let names = []
 
                 // Hent alle navn i telefonkatalogen ved å bruke en for...in -løkke
-                for (const key in tlfKatalog) {
-                    names.push(key)
-                }
-
                 return names;
             }
 
+            // ikke rør koden under her
             const testTlfKatalog = {
                 "John": 12312,
                 "Marley": 420,
                 "Gabe": 1337,
             }
-            const extractedNames = getAllNames(testTlfKatalog).push('asdf')
-            checkAnswer(JSON.stringify(Object.keys(testTlfKatalog)) === JSON.stringify(extractedNames), "useForInLoop")
+            const extractedNames = getAllNames(testTlfKatalog)
+            checkAnswer(JSON.stringify(Object.keys(testTlfKatalog)) === JSON.stringify(extractedNames),
+                "useForInLoop")
         }
     ]
 
@@ -201,7 +229,6 @@
     tasks.forEach(task => task())
     // Vis score
     printResults();
-
 </script>
 
 </html>
