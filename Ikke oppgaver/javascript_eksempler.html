@@ -23,6 +23,7 @@
             color: white;
             /* white-space: pre-line; */
         }
+
         button {
             margin: 50px;
         }
@@ -30,7 +31,6 @@
     <div id="container"></div>
 </body>
 <script>
-
     function toggleCollapse(event) {
         const parentId = event.target.parentNode.id
         console.log(parentId)
@@ -53,13 +53,91 @@
             <pre class="pretty-print">
                 ${example.run}
             </pre>
-            </figure>`
-        )
+            </figure>`)
         runButton
         return [rowContainer, runButton]
     }
 
-    const examples = [
+    const examples = [{
+            label: "primitiver",
+            run: () => {
+                let /**int*/     myNum = 5;             // heltall
+                
+                let /**float*/   myFloatNum = 5.99.f;   // desimaltall
+                
+                let /**char*/    myLetter = 'D';        // bokstav
+                
+                let /**boolean*/ myBool = true;         // boolsk verdi
+                
+                let /**String*/  myText = "Hello";      // tekststreng
+            }
+        },
+        {
+            label: "typeof",
+            run: () => {
+                console.log(typeof 42);
+                // expected output: "number"
+
+                console.log(typeof 'blubber');
+                // expected output: "string"
+
+                console.log(typeof true);
+                // expected output: "boolean"
+
+                console.log(typeof undeclaredVariable);
+                // expected output: "undefined"
+            }
+        },
+        {
+            label: "arrays",
+            run: () => {
+                let biler = ["Saab", "Volvo", "BMW"];
+                console.log(biler[1]);
+                let bilBiler = [
+                    ["Saab", "Volvo", "BMW"],
+                    ["Saab2", "Volvo2", "BMW2"],
+                    ["Saab3", "Volvo3", "BM3"]
+                ]
+                console.log(bilBiler[1][1])
+                console.log(biler[1][1]) /** <- her returneres 'o'-charen fra index 1 i "Volvo" */
+            }
+        },
+        {
+            label: "object",
+            run: () => {
+                let foobar = {
+                    foo: "bar"
+                }
+                let bil = {
+                    type: "Fiat",
+                    modell: 500,
+                    farge: "hvit",
+                    kjøyr: (posisjon) => posisjon += 100,
+                    hanskerom: {
+                        kartbok: "ta til venstre, så til høyre, og så rett frem til du er i Roma",
+                        nøkler: "ikke putt nøkler her, da! Det er ikke trygt"
+                    },
+                    passasjer: ["fører", "mor", "svigerfar", "baby"],
+                    boolfalsk: false,
+                    boolsann: true,
+                };
+                console.log(bil)
+            }
+        },
+        {
+            label: "funksjoner",
+            run: () => {
+                function funksjonEn(kall) {
+                    return kall
+                }
+                console.log(funksjonEn(3))
+
+                function funksjonMedDefaultParameter(kall = 4) {
+                    return kall
+                }
+                console.log(funksjonMedDefaultParameter())
+            }
+        },
         {
             label: "Lambda/pil-funksjon",
             run: () => {
@@ -68,6 +146,7 @@
 
                 // med input
                 hello = (val) => "Hello " + val;
+                console.log(hello("jørgen"))
 
                 // trenger ikke () dersom det bare er en input parameter
                 hello = val => "Hello " + val;
@@ -101,7 +180,6 @@
                 [a, b, ...rest] = [10, 20, 30, 40, 50];
                 console.log(rest);
                 // expected output: Array [30,40,50]
-
             }
         },
         {
@@ -114,12 +192,6 @@
                 }
 
                 myFun("one", "two", "three", "four", "five", "six");
-
-                // Console Output:
-                // a, one
-                // b, two
-                // manyMoreArgs, [three, four, five, six]
-
             }
         },
         {
@@ -133,23 +205,6 @@
 
                 // er det samme som:
                 myFunction(-1, 0, 1, 2, 3);
-            }
-        },
-        {
-            label: "typeof",
-            run: () => {
-                console.log(typeof 42);
-                // expected output: "number"
-
-                console.log(typeof 'blubber');
-                // expected output: "string"
-
-                console.log(typeof true);
-                // expected output: "boolean"
-
-                console.log(typeof undeclaredVariable);
-                // expected output: "undefined"
-
             }
         }
     ]

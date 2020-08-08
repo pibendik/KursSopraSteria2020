@@ -1,0 +1,11 @@
+.klasse1 {
+    background-color: blueviolet;
+}
+
+#id1 {
+    background-color: aquamarine;
+}
+
+p::first-letter {
+    color: blue;
+}
