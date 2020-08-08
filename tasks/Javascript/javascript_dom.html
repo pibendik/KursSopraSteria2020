@@ -7,6 +7,7 @@
     <title>Document</title>
 </head>
 
+<!-- ikke rør koden i <body> -->
 <body>
     <div id="addImageToMe">
         <div>
@@ -127,27 +128,27 @@
             document.body.appendChild(img)
         }
     }
-
     // end setup
+
     const tasks = [
         function addElementToDiv() {
 
             const parentDiv = document.getElementById("addImageToMe");
 
             // Lag et nytt img element
-            const addMe = document.createElement("img")
-            addMe.src = "https://i.kym-cdn.com/entries/icons/original/000/029/079/hellothere.jpg"
+            // ... og sett "src"-verdien til der det finnes et bilde, online eller lokalt
 
             // Legg element til i parentDiv 
-            parentDiv.appendChild(addMe)
+            
+            // ikke rør koden under her
             checkAnswer(parentDiv.children.length > 1, addElementToDiv.name)
         },
 
         function removeElementFromDiv() {
 
             const divToRemoveFrom = document.getElementById("removeElementFromDiv");
-
-            divToRemoveFrom.removeChild(divToRemoveFrom.children[1])
+            // slett elementet "removeElementFromDiv"
+            // removeElementFromDiv er et child av divToRemoveFrom
 
             let removed = true
             for (let index = 0; index < divToRemoveFrom.children.length; index++) {
@@ -157,35 +158,35 @@
                 }
             }
 
+            // ikke rør koden under her
             checkAnswer(removed, removeElementFromDiv.name)
         },
 
         function removeAllDivsInParent() {
+
             const container = document.getElementById("remove-all-divs")
-            // Bruk getElementByTagName til å fjerne alle divs
-            const divs = container.getElementsByTagName("div")
-            while (divs.length > 0) {
-                divs[0].remove()
-            }
+            // Bruk getElementsByTagName til å lage en liste av divs, for så å fjerne alle sammen med .remove()
+            
+            // ikke rør koden under her
             checkAnswer(!container.innerHTML.includes("Fjern meg!") && container.innerHTML.includes("Spar meg!"), removeAllDivsInParent.name)
         },
 
-        function querySelector() {
+        function useQuerySelector() {
+
             const garden = document.getElementById("queue-container");
 
-            // Fjern den første div'en med klasse "cool"
-            garden.querySelector('.cool').remove()
-            checkAnswer(!garden.innerHTML.includes(2), querySelector.name)
+            // Fjern den første div'en med klasse "cool" i queue-container
+
+            // ikke rør koden under her
+            checkAnswer(!garden.innerHTML.includes(2), useQuerySelector.name)
         },
 
         function querySelectorAll() {
+
             const garden = document.getElementById("weedy-garden");
-            // Fjern alt ugresset i "garden"
+            // Fjern alt ugresset i "garden", for eksempel med querySelectorAll()-funksjonen og en løkke
 
-            const weeds = garden.querySelectorAll(".weed")
-            weeds.forEach(weed => weed.remove())
-
-            // Test code
+            // ikke rør koden under her
             checkAnswer(garden.innerHTML.includes("Blomst") && !garden.innerHTML.includes("Ugress"), querySelectorAll.name)
         },
 
