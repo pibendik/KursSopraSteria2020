@@ -55,9 +55,9 @@
 
         function () {
             // Fiks koden! Det er en const (altså konstant) som vi endrer på! Det er ikke noe bra!
-            const x = 2;
+            let x = 2;
             x = 1
-            
+
             // ikke rør koden under her
             checkAnswer(true, "const")
         },
@@ -71,6 +71,17 @@
 
             // ikke rør koden under her
             checkAnswer(x === 1, "UseLetOrConst")
+        },
+
+        function useLetOrConst2() {
+            // Bruk let (eller const) istedet for var.
+            var x = "en tekst";
+            if (true) {
+                var x = "en annen tekst";
+            }
+
+            // ikke rør koden under her
+            checkAnswer(x === "en tekst", "UseLetOrConst2")
         },
 
         // Object 
@@ -89,10 +100,29 @@
             checkAnswer(printAge(person) === 18, "lookUpObject")
         },
 
+        // Object 
+        function lookUpObject2() {
+
+            function definisjonenPåVennskap(ordbokaTilBendik) {
+                // sett inn kode her
+                return ""
+            }
+
+            // ikke rør koden under her
+            let ordbokaTilBendik = {
+                vennskap: 'Vennskap er et skap med saft og utendørs leketøy for 2+',
+                ekteskap: 'Ekteskap er typisk laget av eik eller liknende tungt treverk',
+                troskap: 'Troskap finner du på båter like bak ankerkjettingen til oppbevaring av trosser',
+                skapelse: 'Gammelt ord for flexing, typisk brukt om folk når de er dramatiske',
+                dårskap: 'Et skap med dører'
+            }
+            checkAnswer(definisjonenPåVennskap(ordbokaTilBendik) === 'Et skap med dører', "lookUpObject2")
+        },
+
         // Arrays
         function addToArray() {
 
-            let numbers = [6, 7];
+            const numbers = [6, 7]; // ikke endre denne linjen ;)
 
             // Legg til blant annet tallene 2 og 10 i numbers med sånt som push og unshift.
             // Sørg for at 10 er siste tall  og 2 er første tall i numbers
@@ -105,7 +135,7 @@
 
         function arrayManipulation() {
 
-            const numbers = [1, 2, 3, 4]
+            const numbers = [1, 2, 3, 4] // ikke endre denne linjen
 
             // Bruk splice til å fjerne de tre første elementene i numbers
 
@@ -113,6 +143,16 @@
             checkAnswer(numbers.length === 1 && numbers[0] === 4, "arrayManipulation")
         },
 
+        function arrayManipulation2() {
+
+            const navn = ["Ada", "Ida", "Oda", "Edda"] // ikke endre denne linjen
+            
+            // Bruk splice til å fjerne de to første elementene i numbers, og
+            // legge til "Ådda" i samme slengen #oneliner
+
+            // ikke rør koden under her
+            checkAnswer(navn.length === 3 && navn[0] === "Ådda" && navn[1] === "Oda" && navn[2] === "Edda", "arrayManipulation2")
+        },
         // Operators  
         function OperatorsIf() {
 
@@ -153,12 +193,12 @@
         // For loops
         function useForLoopI() {
 
-            const numbers = [1, 2, 3, 4, 5, 6];
+            const numbers = [1, 2, 3, 4, 5, 6, 7, 8];
             let output = [];
             // Bruk en for-løkke for å legge til alle heltall fra numbers i output
 
             // ikke rør koden under her
-            checkAnswer(JSON.stringify(output) === JSON.stringify([2, 4, 6]), "UseForLoopI")
+            checkAnswer(JSON.stringify(output) === JSON.stringify([2, 4, 6, 8]), "UseForLoopI")
         },
 
         function useForLoopIBreak() {
@@ -185,8 +225,8 @@
             // Bruk continue
             for (let index = 0; index < numbers.length; index++) {
                 let element = numbers[index]
-                output.push(element)
-            }
+                output.push(element) 
+            } 
 
             // ikke rør koden under her
             checkAnswer(JSON.stringify(output) === JSON.stringify([2, 4, 6]), "useForLoopIContinue")
@@ -198,7 +238,7 @@
                 let output = "";
 
                 // for... of løkke for å reversere stringToReserve input parameteren
-                
+
                 return output;
             }
 
