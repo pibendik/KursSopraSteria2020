@@ -8,7 +8,8 @@
 </head>
 
 <body>
-
+    <h1>ctrl + shift + i</h1>
+    <h2>for konsollen</h2>
 </body>
 <script>
 
@@ -24,7 +25,6 @@
             unsolvedTasks.push(`🤔 Oppgave ${taskName}`)
         }
     }
-
     function printResults() {
         console.groupCollapsed(`%c ✔ ${solvedTasks.length} av ${tasks.length} oppgaver løst`, 'background: #15574F; color: white;')
         solvedTasks.forEach(taskString => {
@@ -38,7 +38,6 @@
         console.groupEnd();
         console.log(`${solvedTasks.length} av ${tasks.length} oppgaver løst`)
     }
-
     // end setup
 
     const tasks = [

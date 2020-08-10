@@ -8,76 +8,47 @@
     <title>Document</title>
 </head>
 
-
 <body>
     <div>
         <div>Dette er den <div>skeiveste</div> overskriften!</div>
-        <div>forfatterens navn skal stå her, som element nr. 2 i denne headeren...</div>
+        <div>forfatterens navn skal stå her. Dette er element nr. 2 i headeren, av typen "author"</div>
     </div>
-    <div>Her har vi en litt mindre overskrift.</div>
-    <div> div-tagger er litt annerledes fra andre tagger. Når du lager en lang tekst,
-        så vil du kanskje at noe av teksten <div class="fargetekst">er inne i en div</div>
+    <div>Her har vi en mellomstor overskrift.</div>
+    <div>Dette er en paragraf om span-tagger, med en span-tagg i seg.
+        span-tagger er litt annerledes fra andre tagger. Når du lager en lang tekst,
+        så vil du kanskje at noe av teksten <div class="fargetekst">er inne i en span slik som dette, </div>
         slik at du kan gi den den avgrensede teksten egenskaper, som farge eller unik ID
         (mer om det senere i kurset)</div>
-    <div><div class="div-er-kult">div er kult!</div> men klasser skal vi først lære oss om i morgen.</div>
+    <div><div class="span-er-kult">span er kult!</div> og de har typisk en "class",
+        men "class" skal vi først lære oss om i morgen.</div>
+
     <div>Vi har en ny liten overskrift her.</div>
     <div>Det hele gjør vi for å vise hvordan HTML-tagger er ment å oppmuntre til å produsere tekst som ser behagelig ut.
         <div class="typografi">Typografi er en eldgammel kunst, som har blitt forfinet i over 1000 år!</div>
+        Nå skal vi bruke html til å lage en punktliste, og da er det typisk "ul"-element vi lager,
+        som betyr "un-ordered list", med masse små listeelementer, eller "li"-elementer i:
     </div>
     <div>
         <div>Når man skriver en hjemmeside slik, i ren HTML og CSS, blir den utrolig lettvektig!</div>
-        <div>Det gjør at browsere kan laste inn siden fort, til forskjell fra sider som bruker mye javascript.</div>
-        <div>Og så nytter det selvfølgelig å få litt innblikk i hvordan HTML ser ut</div>
-        <div>Det ser blant annet nesten alltid likt ut på alle skjermer</div>
-        <div>Alle kan lese teksten <div>med mindre den er veldig liten, eller definert som "small".</div></div>
-        <div>HTML-sider som dette er <div href="https://www.w3.org/TR/WCAG20/">tilrettelagt for alle</div>, slik at hvem som
-            helst kan lese dem, <div>men ikke alle kan lese liten tekst...</div></div>
-        <div>I\Med en slik side uten bilder gjør det ikke noe om brukeren for eksempel har lite mobildata.</div>
-        <div>Vi bruker kun gratis ressurser, og kan benytte oss av fonter som "Open Sans" <div>(som forresten ikke er
-                større enn
-                15.21kB)</div></div>
-        <div>Denne siden laster ikke inn noen store rammeverk, jquery, react osv, men holder seg til HTML, CSS3 og JS.
+        <div>Det gjør at browsere kan laste inn siden fort, til forskjell fra sider som bruker mye clojurescript,
+            javascript eller lignende.</div>
+        <div>Og så nytter det selvfølgelig å få litt innblikk i hvordan HTML blir seende ut.</div>
+        <div>Det ser blant annet nesten alltid likt ut på alle skjermer.</div>
+        <div>Alle kan lese teksten <div>med mindre den er veldig liten, som den blir i "small"-tagger.</div></div>
+        <div>HTML-sider som denne er <div href="https://www.w3.org/TR/WCAG20/">tilrettelagt for alle</div>, slik at hvem som
+            helst kan lese dem, <div>bortsett fra at ikke alle kan lese liten tekst...</div></div>
+        <div>Med en side som denne, stort sett uten bilder og animasjoner, gjør det ikke noe om brukeren for eksempel har lite mobildata.</div>
+        <div>Vi bruker dessuten kun gratis ressurser, og kan benytte oss av fonter som "Open Sans" <div>(som forresten ikke er
+                større enn 15.21kB #small)</div></div>
+        <div>Denne siden laster ikke inn noen store rammeverk som jquery eller react osv, men holder seg til HTML, CSS3 og JS.
             Det holder ting rent!</div>
         <div>En annen måte å unngå at siden bruker mye plass er å bruke SVG i stedet for bilder når det er mulig. Det er
             ikke påkrevd, men hvis du kan, <div>gjør det!</div>.</div>
         <div>Bruk litt <div class="colored" id="rbw" style="color: rgb(235, 207, 71);">farger</div> i teksten din.</div>
         <div>Linker må ikke nødvendigvis være <div class="sb">sånn standard blå</div> som browseren tegner dem, eller
-            sånn
-            <div class="sv">fiolett</div> når de har blitt besøkt heller, bare gi dem en <div
+            sånn <div class="sv">fiolett</div> når de har blitt besøkt heller, bare gi dem en <div
                 href="http://www.colorhexa.com/0077aa">fin farge</div></div>
     </div>
-
-    <div>Overskrift til tabell med ulike relevante ting</div>
-    <div>
-        <div>
-            <div>
-                <div coldiv="4">
-                    Veldig relevante
-                </div>
-            </div>
-        </div>
-        <div>
-            <div>
-                <div>Bedrift</div>
-                <div>Lokaler</div>
-                <div>Befolkning</div>
-                <div>Språk</div>
-            </div>
-            <div>
-                <div>Sopra Steria</div>
-                <div>Oslo</div>
-                <div>Soprasterianere</div>
-                <div>Memes</div>
-            </div>
-            <div>
-                <div>Nav</div>
-                <div>Oslo</div>
-                <div>Navere</div>
-                <div>Jus</div>
-            </div>
-        </div>
-    </div>
-
 
     <div>Det er fint med bilder</div>
     <div class="posisjonering">
@@ -106,15 +77,21 @@
         Disse setningene handler verken om SVG eller andre bilder, så derfor gir det mening her.
     </div>
     <div>
+        Så fyller vi på med en paragraf med litt ekstra fyll-tekst fordi det er pent.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Curabitur vitae nunc sed velit dignissim sodales. Amet luctus venenatis lectus magna. Euismod quis viverra nibh cras pulvinar mattis nunc sed. Tellus elementum sagittis vitae et leo duis ut diam quam. Nisi vitae suscipit tellus mauris a diam. Imperdiet proin fermentum leo vel orci porta non. Quam adipiscing vitae proin sagittis. Turpis massa sed elementum tempus egestas sed sed risus. Dis parturient montes nascetur ridiculus mus mauris vitae ultricies. Orci phasellus egestas tellus rutrum tellus pellentesque eu.
+    </div>
+    <div>
         Det finnes noe som heter "blockquote" også, som du kan teste ut på dette lille avsnittet.
         <div>En eller annen "author" har sikkert sagt det!</div>
     </div>
+
     <div>Avslutning</div>
     <div>Til avslutninghar vi en liten audio-snutt til dere:</div>
     <div src="https://archive.org/download/ReclaimHtml5/ReclaimHtml5.mp3" type="audio/mpeg" controls>
         Her kan det stå tekst som vises  i tilfelle dette "audio"-elementet ikke kan rendres i brukerens browser</div>
     <div>... og en liten videosnutt også. Begge er hentet <a href="https://html.com/media/">herfra.</a></div>
-    <div width="640" height="480"  src="https://archive.org/download/Popeye_forPresident/Popeye_forPresident_512kb.mp4" controls> Dette er altså et video-element.</div>
+    <div width="640" height="480"  src="https://archive.org/download/Popeye_forPresident/Popeye_forPresident_512kb.mp4" controls>
+         Dette er altså et video-element.</div>
     
     <div>Denne hjemmesiden er inspirert av <a href="http://motherfuckingwebsite.com/"><div
                 class="mfw">motherfuckingwebsite</div></a> og <a href="http://bettermotherfuckingwebsite.com/"><div
