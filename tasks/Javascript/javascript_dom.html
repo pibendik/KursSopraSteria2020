@@ -5,10 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <!-- ikke rør koden i <body> -->
+
 <body>
+
+    <img id="logo" style="position: fixed; top: 10px; right: 10px; width: 30px" src="../../favicon.ico" alt="sopra steria logo">
+
     <div id="addImageToMe">
         <div>
             Legg til et bilde her
@@ -24,27 +29,6 @@
     </div>
     <div id="weedy-garden">
         <h1>Le Garden: </h1>
-        <style>
-            #weedy-garden {
-                display: flex;
-                flex-direction: row;
-                border: solid 2px brown;
-            }
-
-            .weed {
-                background-color: chartreuse;
-                margin: 2px;
-                display: flex;
-                margin: auto;
-            }
-
-            .flower {
-                background-color: yellow;
-                margin: 2px;
-                display: flex;
-                margin: auto;
-            }
-        </style>
         <div class="weed">
             Ugress
         </div>
@@ -61,16 +45,15 @@
             Ugress
         </div>
     </div>
+    <img id="asider" src="../../Ikke oppgaver/asider.gif">
+
+    <img id="transformer" width="110px" height="110px" src="../../favicon.ico">
+
+    <img id="cookie" width="110px" height="110px" src="../../Ikke oppgaver/cookie.png">
+
     <h2> Kø (Fjern det først elementet med klasse "cool"):</h2>
     <div id="queue-container">
-        <style>
-            #queue-container {
-                display: flex;
-                flex-direction: row;
-                align-items: center;
-                justify-content: space-around;
-            }
-        </style>
+
         <div>1</div>
         <div class="cool">2</div>
         <div class="cool">3</div>
@@ -79,13 +62,7 @@
 
     <h2>Fjern alle divs</h2>
     <div id="remove-all-divs">
-        <style>
-            #remove-all-divs {
-                border: solid 2px brown;
-                display: flex;
-                justify-content: space-around;
-            }
-        </style>
+
         <div><b>Fjern meg!</b></div>
         <span>Spar meg!!</span>
         <div><b>Fjern meg!</b></div>
@@ -101,6 +78,7 @@
 
     let unsolvedTasks = []
     let solvedTasks = []
+
     function checkAnswer(condition, taskName) {
         if (condition) {
             solvedTasks.push(`😃 Oppgave ${taskName}`)
@@ -110,7 +88,8 @@
     }
 
     function printResults() {
-        console.groupCollapsed(`%c ✔ ${solvedTasks.length} av ${tasks.length} oppgaver løst`, 'background: #15574F; color: white;')
+        console.groupCollapsed(`%c ✔ ${solvedTasks.length} av ${tasks.length} oppgaver løst`,
+            'background: #15574F; color: white;')
         solvedTasks.forEach(taskString => {
             console.log(taskString)
         })
@@ -122,7 +101,7 @@
         console.groupEnd();
         console.log(`${solvedTasks.length} av ${tasks.length} oppgaver løst`)
 
-        if(solvedTasks.length === tasks.length){
+        if (solvedTasks.length === tasks.length) {
             const img = document.createElement('img')
             img.src = '../../Ikke oppgaver/aside.gif'
             document.body.appendChild(img)
@@ -139,7 +118,7 @@
             // ... og sett "src"-verdien til der det finnes et bilde, online eller lokalt
 
             // Legg element til i parentDiv 
-            
+
             // ikke rør koden under her
             checkAnswer(parentDiv.children.length > 1, addElementToDiv.name)
         },
@@ -166,9 +145,10 @@
 
             const container = document.getElementById("remove-all-divs")
             // Bruk getElementsByTagName til å lage en liste av divs, for så å fjerne alle sammen med .remove()
-            
+
             // ikke rør koden under her
-            checkAnswer(!container.innerHTML.includes("Fjern meg!") && container.innerHTML.includes("Spar meg!"), removeAllDivsInParent.name)
+            checkAnswer(!container.innerHTML.includes("Fjern meg!") && container.innerHTML.includes("Spar meg!"),
+                removeAllDivsInParent.name)
         },
 
         function useQuerySelector() {
@@ -187,8 +167,46 @@
             // Fjern alt ugresset i "garden", for eksempel med querySelectorAll()-funksjonen og en løkke
 
             // ikke rør koden under her
-            checkAnswer(garden.innerHTML.includes("Blomst") && !garden.innerHTML.includes("Ugress"), querySelectorAll.name)
+            checkAnswer(garden.innerHTML.includes("Blomst") && !garden.innerHTML.includes("Ugress"),
+                querySelectorAll.name)
         },
+
+        function cookieClicker(){
+            // gjør så kjeksen kan trykkes på, og at det skjer noe ved dens onClick()
+            // denne må du bare søke deg fram til en løsning for å få til...
+            let kjeksen = document.getElementById("cookie");
+
+            // ikke rør koden under her
+            checkAnswer(kjeksen.onclick !== null, cookieClicker.name)
+        },
+
+        function moveObject() {
+
+            // flytt logoen!
+            let kjeksen = document.getElementById("logo");
+
+            // ikke rør koden under her
+            checkAnswer(kjeksen.style.top !== kjeksen.style.right || kjeksen.style.top !== "10px", moveObject.name) 
+        },
+
+        function useTransform() {
+
+            // transform brukes for å rotere ting. Gjør det
+            // med elementet som har id="transformer"!
+
+            // ikke rør koden under her
+            checkAnswer(document.getElementById("transformer").style.transform !== "", useTransform.name)
+
+        },
+
+        function showTheHiddenElement() {
+            // det usynlige elementet har ID="asider"
+            // bruk getElementByID, og 
+            // gjør elementet synlig ved å endre på .display property'en!
+
+            // ikke rør koden under her
+            checkAnswer(document.getElementById("asider").style.display !== "" && document.getElementById("asider").style.display !== "none" , showTheHiddenElement.name)
+        }
 
 
     ]

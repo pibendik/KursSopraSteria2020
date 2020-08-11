@@ -1,0 +1,45 @@
+body {
+    padding: 5% 10% 30% 5%;
+}
+
+#remove-all-divs {
+    border: solid 2px brown;
+    display: flex;
+    justify-content: space-around;
+}
+
+#weedy-garden {
+    display: flex;
+    flex-direction: row;
+    border: solid 2px brown;
+}
+
+.weed {
+    background-color: chartreuse;
+    margin: 2px;
+    display: flex;
+    margin: auto;
+}
+
+#asider {
+    display: none;
+}
+
+.flower {
+    background-color: yellow;
+    margin: 2px;
+    display: flex;
+    margin: auto;
+}
+
+#queue-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#removeElementFromDiv {
+    display: flex;
+    justify-content: space-between;
+}
