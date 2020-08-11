@@ -120,39 +120,96 @@
         },
 
         // Arrays
-        function addToArray() {
+        function addToArray(){
+            const elements = ["el1", "el2"]
+            const nyttEl = "nytt el"
+            // Bruk push til å legge til nyttEl i elements array'en
+
+            // ikke rør koden under her
+            checkAnswer(elements.includes("nytt el"), addToArray.name)
+        },
+
+        function addToArray2() {
 
             const numbers = [6, 7]; // ikke endre denne linjen ;)
 
             // Legg til blant annet tallene 2 og 10 i numbers med sånt som push og unshift.
-            // Sørg for at 10 er siste tall  og 2 er første tall i numbers
+            // Sørg for at 10 er siste tall og 2 er første tall i numbers
 
             // ikke rør koden under her
             checkAnswer(numbers.includes(6) && numbers.includes(7) && numbers[0] === 2 && numbers[numbers.length -
-                1] === 10, "addToArray")
+                1] === 10, addToArray2.name)
 
         },
 
+        function arrayMerge() {
+            // Kombiner array1 og array2 med concat
+            const array1 = [1, 2, 4];
+            const array2 = ["Hei", "Hallo", "Hola"];
+
+            let kombinertArray = [] // Bruk concat
+            checkAnswer(array1.every(el =>  kombinertArray.includes(el)) && array2.every(el => kombinertArray.includes(el)), arrayMerge.name)
+        },
+
         function arrayManipulation() {
+            const elements = ["først", "andre", "sist"]
+            // Bruk pop og shift til å fjerne første og siste element
+
+            let first = "" // Fjern første element her
+            let last = "" // Fjern andre element her
+
+            // Ikke rør koden under her
+            checkAnswer(first === "først" && last === "sist" && elements[0] === "andre", arrayManipulation.name)
+        },
+
+        function arrayManipulation2() {
 
             const numbers = [1, 2, 3, 4] // ikke endre denne linjen
 
             // Bruk splice til å fjerne de tre første elementene i numbers
 
             // ikke rør koden under her
-            checkAnswer(numbers.length === 1 && numbers[0] === 4, "arrayManipulation")
+            checkAnswer(numbers.length === 1 && numbers[0] === 4, arrayManipulation2.name)
         },
 
-        function arrayManipulation2() {
+        function arrayManipulation3() {
 
             const navn = ["Ada", "Ida", "Oda", "Edda"] // ikke endre denne linjen
-            
+
             // Bruk splice til å fjerne de to første elementene i numbers, og
             // legge til "Ådda" i samme slengen #oneliner
 
             // ikke rør koden under her
-            checkAnswer(navn.length === 3 && navn[0] === "Ådda" && navn[1] === "Oda" && navn[2] === "Edda", "arrayManipulation2")
+            checkAnswer(navn.length === 3 && navn[0] === "Ådda" && navn[1] === "Oda" && navn[2] === "Edda", "arrayManipulation3")
         },
+
+        function arrayIndexOf() {
+            // Bruk indexof til å returnere index'en til "Yo"
+            const array = ["Hei", "Hallo", "Hola", "Como estas", "Yo", "Hmm"]
+
+            let indexOfYo = -1 // Bruk indexof her
+            checkAnswer(indexOfYo === 4, arrayIndexOf.name)
+        },
+
+        function arrayJoin() {
+            // Bruk join til å kombinere ordene i array'en til en setning
+            const array = ["Dette", "er", "en", "setning"]
+
+            let setning = "" // Bruk join her
+            checkAnswer(setning === "Dette er en setning", arrayJoin.name)
+        },
+
+        function arrayCopy() {
+            // Hvorfor fungerer ikke dette?
+            // Løs oppgaven med en funksjon som returnerer en kopi av copyMe array'en
+            const copyMe = [1,2,"asdf"]
+            let copyOfCopyMe = copyMe;
+
+            copyOfCopyMe.push("Hello")
+            checkAnswer(copyOfCopyMe.includes("Hello") && !copyMe.includes("Hello"), arrayCopy.name)
+        },
+        
+
         // Operators  
         function OperatorsIf() {
 
@@ -169,7 +226,26 @@
             const todd = {
                 age: 17
             }
-            checkAnswer(isOldEnough(john) && !isOldEnough(todd), "OperatosIf")
+            checkAnswer(isOldEnough(john) && !isOldEnough(todd), OperatorsIf.name)
+        },
+
+        function OperatorsIfShorthand() {
+
+            // Bruk shorthand if else for å validere om personen er gammel nok til å ta lappen
+            // tips: <utrykk> ? <verdi> : <verdi>
+            function isOldEnough(person) {
+                // Kode her
+            }
+
+            // ikke rør koden under her
+            const john = {
+                name: "John",
+                age: 18
+            }
+            const todd = {
+                age: 17
+            }
+            checkAnswer(isOldEnough(john) && !isOldEnough(todd), "OperatosIfShorthand")
         },
 
         function OperatorsSwitch() {
@@ -188,6 +264,45 @@
                 age: 17
             }
             checkAnswer(isOldEnough(john) && !isOldEnough(todd), "OperatorsSwitch")
+        },
+
+        function opeartorsOnlyBoolean() {
+            // Ikke bruk if, eller switch og returner en boolean
+            function isOldEnough(person) {
+                // Kode her
+            }
+
+            // ikke rør koden under her
+            const john = {
+                name: "John",
+                age: 18
+            }
+            const todd = {
+                age: 17
+            }
+
+            // Ikke rør koden under her
+            checkAnswer(isOldEnough(john) && !isOldEnough(todd), "OperatorsOnlyBoolean")
+        },
+
+        function booleanConversion() {
+            const string = "string"
+            // Bruk !! til å convertere til string til boolean med verdi true
+            let konvertert;
+
+            // Ikke rør koden under her
+            checkAnswer((typeof konvertert === 'boolean') && konvertert, "BooleanConversion")
+
+        },
+
+        function falsyValues() {
+
+            // Fyll array'en med alle 8 forskjellige falsy values
+            // Tips: https://developer.mozilla.org/en-US/docs/Glossary
+            const falsyValues = [];
+            // Ikke rør koden under her
+            const hasNonFalsyValue = !falsyValues.some(value => !!value)
+            checkAnswer(hasNonFalsyValue && falsyValues.length === 8, "falsyValues")
         },
 
         // For loops
@@ -225,8 +340,8 @@
             // Bruk continue
             for (let index = 0; index < numbers.length; index++) {
                 let element = numbers[index]
-                output.push(element) 
-            } 
+                output.push(element)
+            }
 
             // ikke rør koden under her
             checkAnswer(JSON.stringify(output) === JSON.stringify([2, 4, 6]), "useForLoopIContinue")
@@ -262,6 +377,40 @@
             const extractedNames = getAllNames(testTlfKatalog)
             checkAnswer(JSON.stringify(Object.keys(testTlfKatalog)) === JSON.stringify(extractedNames),
                 "useForInLoop")
+        },
+
+        function useObjectKeys() {
+            function getAllNames(tlfKatalog) {
+                // Hent alle navn i telefonkatalogen ved å bruke Object.keys
+                return []
+            }
+
+            // ikke rør koden under her
+            const testTlfKatalog = {
+                "John": 12312,
+                "Marley": 420,
+                "Gabe": 1337,
+            }
+            const extractedNames = getAllNames(testTlfKatalog)
+            checkAnswer(JSON.stringify(Object.keys(testTlfKatalog)) === JSON.stringify(extractedNames),
+                useObjectKeys.name)
+        },
+
+        function useObjectValues() {
+            function getAllNumbers(tlfKatalog) {
+                // Hent alle navn i telefonkatalogen ved å bruke Object.values
+                return []
+            }
+
+            // ikke rør koden under her
+            const testTlfKatalog = {
+                "John": 12312,
+                "Marley": 420,
+                "Gabe": 1337,
+            }
+            const extractedNames = getAllNumbers(testTlfKatalog)
+            checkAnswer(JSON.stringify(Object.values(testTlfKatalog)) === JSON.stringify(extractedNames),
+                useObjectValues.name)
         }
     ]
 
