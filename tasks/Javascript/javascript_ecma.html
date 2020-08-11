@@ -121,6 +121,16 @@
 
       // NO TOUCHY!
       checkAnswer(newArray[newArray.length - 2] === 0 && newArray[newArray.length - 1] === 1)
+    },
+
+    function useRestParams2() {
+      // Gjør slik at funksjonen returnerer alle parametere untatt x
+      function returnRest(x){
+        return
+      }
+
+      // NO TOUCHY!
+      checkAnswer(JSON.stringify(returnRest(1, 2, 3)) === JSON.stringify([2, 3]), useRestParams2.name)
     }
   ]
 
