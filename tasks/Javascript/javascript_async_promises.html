@@ -15,7 +15,8 @@
 
     </ul>
 </body>
-<script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"
+    integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
 <script>
     // setup
     let solved = 0;
@@ -36,14 +37,14 @@
     // end setup
 
     // Oppgaver:
+    // Bruk denne linken for å hente en vits
     const link = 'https://api.chucknorris.io/jokes/random';
 
     (function usePromise() {
         function goGetMeAJoke() {
             /* Oppgave: Hent en tilfeldig vits ved å bruke fetch(lenke), then og response.json.
             ** skriv kode her. */
-            return fetch(link)
-                .then(response => response.json())
+            return "???"
         }
 
         goGetMeAJoke().then(validateAndAddJoke) /** Her sjekker vi om vitsen var noe bra ;) */
@@ -51,28 +52,30 @@
 
     // https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous/Async_await
     (async function useAsync() {
+        let joke;
         async function goGetMeAJoke() {
             let joke;
             /* Bruk async await for å hente en vits */
-            const response = await fetch(link)
-            joke = response.json();
 
             return joke;
         }
 
-        validateAndAddJoke(await goGetMeAJoke())
+        // Lat stå
+        joke = await goGetMeAJoke()
+        validateAndAddJoke(joke)
     })();
 
 
     (function useXMLHttpRequest() {
 
-        function callback(){
-            let response = this.responseText; 
+        function callback() {
             // hent respons
+            let response = "????";
 
+            let joke = "????";
 
-            // kommenter ut denne:
-            // validateAndAddJoke(JSON.parse(response))
+            // La denne stå
+            validateAndAddJoke(joke)
         }
         // Bruke xmlhttprequest til å hente en vits
         // Bruk validateAndAddJoke for å sjekke resultatet
@@ -86,16 +89,16 @@
     function useJqueryAjax() {
 
         // Bruk ajax her og kall validateAndAddJoke med resulatet
-        $.ajax({ dataType: "json", url: link, success: function(result){
-            validateAndAddJoke(result)
-        }})
+        $.ajax()
     };
-
     window.addEventListener('load', useJqueryAjax)
+
+    // Ekstra?
+    // Sjekk ut hva Promise.race() og Promise.all() gjør
 
     function displayScore() {
         console.log("Solved tests: " + solved + " of total: " + total)
-        if(solved !== total){
+        if (solved === total) {
             const img = document.createElement('img')
             img.src = '../../Ikke oppgaver/aside.gif'
             document.body.appendChild(img)
